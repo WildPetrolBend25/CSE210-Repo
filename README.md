@@ -1,5 +1,5 @@
 # cse210-student-template
-This is the starter code for students in CSE 210.
+Monekys and Bananas. We love them both. -Ben Petrini
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
