@@ -4,43 +4,45 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Console.WriteLine("Hello Prep2 World!");
 
         //initialize all the required variables
-        Console.Write("What is your letter grade? ");
+        Console.Write("What is your grade percentage? ");
         string userinput = Console.ReadLine();
         int gradePercentage = int.Parse(userinput);
 
-        //Print user input
-        Console.WriteLine($"This is your grade percentage {gradePercentage}");
-
+        //Figure out the grade based on the 
         string letterGrade = "";
         if (gradePercentage >= 90)
         {
-            Console.WriteLine("You got an A!");
             letterGrade = "A";
         }
         else if (gradePercentage >= 80)
         {
-            Console.WriteLine("You got an B!");
             letterGrade = "B";
         }
         else if (gradePercentage >= 70)
         {
-            Console.WriteLine("You got an C!");
             letterGrade = "C";
         }
         else if (gradePercentage >= 60)
         {
-            Console.WriteLine("You got an D!");
             letterGrade = "D";
         }
-        else if (gradePercentage < 60)
+        else
         {
-            Console.WriteLine("You got an F!");
             letterGrade = "F";
         }
 
-        Console.WriteLine(letterGrade);
+        //Check to see if he/she passed the class
+        if (letterGrade == "A" || letterGrade == "B" || letterGrade == "C" || letterGrade == "D")
+        {
+            Console.WriteLine($"Your letter grade is {letterGrade}");
+            Console.WriteLine("Congrats, you passed the course");
+        }
+        else
+        {
+            Console.WriteLine($"Your letter grade is {letterGrade}");
+            Console.WriteLine("Better luck next time");
+        }
     }
 }
