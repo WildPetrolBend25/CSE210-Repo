@@ -20,6 +20,27 @@ class Program
             Console.WriteLine("You got an A!");
             letterGrade = "A";
         }
+        else if (gradePercentage >= 80)
+        {
+            Console.WriteLine("You got an B!");
+            letterGrade = "B";
+        }
+        else if (gradePercentage >= 70)
+        {
+            Console.WriteLine("You got an C!");
+            letterGrade = "C";
+        }
+        else if (gradePercentage >= 60)
+        {
+            Console.WriteLine("You got an D!");
+            letterGrade = "D";
+        }
+        else if (gradePercentage < 60)
+        {
+            Console.WriteLine("You got an F!");
+            letterGrade = "F";
+        }
+
         Console.WriteLine(letterGrade);
     }
 }
