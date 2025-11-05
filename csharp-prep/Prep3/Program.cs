@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
@@ -33,29 +34,28 @@ class Program
         // Random randomGenerator = new Random();
         // int number = randomGenerator.Next(1, 11);
 
-        //Start main code
+        // //Start main code
 
-        //initialize magic number
-        Console.Write("What is the magic number? ");
-        string number = Console.ReadLine();
-        int magicNumber = int.Parse(number);
+        // //initialize magic number
+        // Console.Write("What is the magic number? ");
+        // string number = Console.ReadLine();
+        // int magicNumber = int.Parse(number);
+
+        //make computer choose number
+        int x = 1;
+        int y = 11;
+        Random randomGeneratior = new Random();
+        int randNumber = randomGeneratior.Next(x, y);
 
         //Get the user guess
         Console.Write("What is your guess? ");
         string guess = Console.ReadLine();
         int userGuess = int.Parse(guess);
 
-
-
         int loopGuess = userGuess;
-        while (loopGuess != magicNumber)
+        while (loopGuess != randNumber)
         {
-            //lower && higher
-            if (magicNumber == loopGuess)
-            {
-                Console.WriteLine("Congrats, You guessed the number");
-            }
-            else if (magicNumber > loopGuess)
+            if (randNumber > loopGuess)
             {
                 Console.WriteLine("Higher");
                 Console.Write("What is your new guess ");
@@ -63,7 +63,7 @@ class Program
                 int finalGuess = int.Parse(newGuess);
                 loopGuess = finalGuess;
             }
-            else if (magicNumber < loopGuess)
+            else if (randNumber < loopGuess)
             {
                 Console.WriteLine("Lower");
                 Console.Write("What is your new guess ");
@@ -73,7 +73,7 @@ class Program
             }
 
         }
-        
+        Console.WriteLine("Congrats, you passed");
 
     }
 }
