@@ -21,6 +21,7 @@ class Program
         // {
         //     Console.WriteLine(i);
         // }
+
         // // getting the list size
         // Console.WriteLine(words.Count);
 
@@ -46,25 +47,47 @@ class Program
                 Console.Write("Enter a number: ");
                 string userInput = Console.ReadLine();
                 int number = int.Parse(userInput);
-                listOfNumbers.Add(number);
-                finalNumber = number;
+
+                // check if the input was zero or not
+                if (number == 0)
+                {
+                    Console.WriteLine("0 was not added to the list");
+                    finalNumber = number;
+                }
+                else
+                {
+                    listOfNumbers.Add(number);
+                }
             }
 
 
         } while (finalNumber != 0);
-        Console.WriteLine("You got out of the while loop");
+        // Console.WriteLine("You got out of the while loop");
 
-        // run through the items in the list
+        // run through the items in the list to get the subtotal
+
         int sumTotal = 0;
         int average = 0;
         int bigNumber = 0;
 
         foreach (int number in listOfNumbers)
         {
-            // Console.WriteLine(number);
             sumTotal = sumTotal + number;
+            if (number > bigNumber)
+            {
+                bigNumber = number;
+            }
         }
-        Console.WriteLine(sumTotal);
+        Console.WriteLine($"The sumtotal of the list is: {sumTotal}");
+
+        // get the average
+        int listLength = listOfNumbers.Count;
+        average = sumTotal / listLength;
+        Console.WriteLine($"The average is: {average}");
+
+        // print the biggest number
+        Console.WriteLine($"the biggest number in the list was: {bigNumber}");
+
 
     }
 }
