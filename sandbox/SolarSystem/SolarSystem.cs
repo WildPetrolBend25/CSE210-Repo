@@ -1,6 +1,6 @@
 class SolarSystem
 {
-    List<Planet> _solarSystem = new List<Planet>();
+    public List<Planet> _solarSystem = new List<Planet>();
 
     public void DisplayPlanetInformation()
     {

@@ -31,8 +31,6 @@ class Program
         int squaredNumber = SquareNumber(favNumber);
         int birthYear;
         PromptUserBirthYear(out birthYear);
-
-
         DisplayResult(username, squaredNumber, birthYear);
 
         // print results
@@ -55,8 +53,8 @@ class Program
         static int PromptUserNumber()
         {
             Console.Write("What is your your favoritie number ");
-            string uderNumber = Console.ReadLine();
-            int favNumber = int.Parse(uderNumber);
+            string userNumber = Console.ReadLine();
+            int favNumber = int.Parse(userNumber);
             return favNumber;
         }
 
