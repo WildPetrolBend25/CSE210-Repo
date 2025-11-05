@@ -13,5 +13,11 @@
         mercury._name = "Mercury";
         mercury._diameter = 1234.434;
         mercury.DisplayPlanetInformation();
+
+        SolarSystem solarSystem = new SolarSystem();
+        solarSystem._solarSystem.Add(mercury);
+        solarSystem._solarsystem.Add(venus);
+        solarSystem.DisplayPlanetInformation();
+
     }
 }
