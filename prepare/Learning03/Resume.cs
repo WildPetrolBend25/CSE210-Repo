@@ -15,7 +15,7 @@ public class Resume
         foreach (Job myJobs in _jobs)
         {
             // goes through thee job lists
-            myJobs.Display();
+            myJobs.DisplayJob();
         }
     }
 }
