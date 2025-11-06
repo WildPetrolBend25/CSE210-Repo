@@ -14,11 +14,23 @@ class Menu
 
     };
 
-    public void ProcessMenu()
+    /* process menu will display the menu to the user and validate the input and return the value.
+    There are no parameters*/
+    public int ProcessMenu()
     {
-        foreach(string menuItem in _menuStrings)
+
+        int userSelection = 0;
+        do
         {
-            Console.WriteLine(menuItem);
-        }
+
+
+            foreach (string menuItem in _menuStrings)
+            {
+                Console.WriteLine(menuItem);
+            }
+            userSelection = int.Parse(Console.ReadLine());
+        } while (userSelection < 1 || userSelection > 5);
+
+        return userSelection;
     }
 }
