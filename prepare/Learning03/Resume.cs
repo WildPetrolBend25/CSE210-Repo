@@ -1,13 +1,21 @@
+using System;
 
+public class Resume
+{
+    public string _name;
 
-// the resume class
-    public class Resume
+    // the job list
+    public List<Job> _jobs = new List<Job>();
+
+    public void Display()
     {
-        string _name = "";
-        List<Job> _jobs;
+        Console.WriteLine($"Name: {_name}");
+        Console.WriteLine("Jobs:");
 
-        static void Display()
+        foreach (Job myJobs in _jobs)
         {
-            //display function
+            // goes through thee job lists
+            myJobs.Display();
         }
     }
+}
