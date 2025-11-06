@@ -5,40 +5,33 @@ class Program
 {
     static void Main(string[] args)
     {
-        Person person = new Person();
-        person._givenName = "Joseph";
-        person._familyName = "Smith";
-        person.ShowWesternName();
-        person.ShowEasternName();
+        //nothing here yet
 
     }
 
-      // A code template for the category of things known as Person. The
-    // responsibility of a Person is to hold and display personal information.
-    public class Person
+    //job class
+    //responsibilities: Keeps track of the company, job title, start year, and end year.
+    public class Job
     {
-        // The C# convention is to start member variables with an underscore _
-        public string _givenName = "";
-        public string _familyName = "";
+        string _company = "";
+        string _jobTitle = "";
+        int _startYear = 0;
+        int _endYear = 0;
 
-        // A special method, called a constructor that is invoked using the  
-        // new keyword followed by the class name and parentheses.
-        public Person()
+        static void Display()
         {
+            //display the info function
         }
+    }
+    
+    public class Resume
+    {
+        string _name = "";
+        List<Job> _jobs;
 
-        // A method that displays the person's full name as used in eastern 
-        // countries or <family name, given name>.
-        public void ShowEasternName()
+        static void Display()
         {
-            Console.WriteLine($"Western style: {_familyName}, {_givenName}");
-        }
-
-        // A method that displays the person's full name as used in western 
-        // countries or <given name family name>.
-        public void ShowWesternName()
-        {
-            Console.WriteLine($"Eastern Style: {_givenName} {_familyName}");
+            //display function
         }
     }
     
