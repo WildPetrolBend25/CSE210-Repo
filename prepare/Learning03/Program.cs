@@ -6,23 +6,19 @@ class Program
     static void Main(string[] args)
     {
         //nothing here yet
+        Console.WriteLine("Hello World");
 
+        // creat a job instance
+        Job job1 = new Job();
+        job1._jobTitle = "Software";
+        job1.Display();
+
+    
     }
 
     //job class
     //responsibilities: Keeps track of the company, job title, start year, and end year.
-    public class Job
-    {
-        string _company = "";
-        string _jobTitle = "";
-        int _startYear = 0;
-        int _endYear = 0;
-
-        static void Display()
-        {
-            //display the info function
-        }
-    }
+    
     
     public class Resume
     {
