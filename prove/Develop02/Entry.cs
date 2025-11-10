@@ -20,9 +20,19 @@ class Entry
         Random randomGeneratior = new Random();
         int randNumber = randomGeneratior.Next(x, y);
         string randomPrompt = entryPrompts[randNumber];
+
+        //get user response
         Console.Write($"{randomPrompt} ");
         string userResponse = Console.ReadLine();
-    
-        return userResponse;
+
+        //get the date time
+        DateTime now = DateTime.Now;
+        string textVersion = now.ToString();
+
+        //make the full journal entry
+        string journalEntry = $"Date: {textVersion}, Prompt: {randomPrompt}, User entry: {userResponse}";
+
+        //return the journal entry
+        return journalEntry;
     }
 }

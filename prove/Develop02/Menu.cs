@@ -17,8 +17,8 @@ class Menu
     There are no parameters*/
     public int ProcessMenu()
     {
-
         int userSelection = 0;
+        //run through the code once 
         do
         {
             foreach (string menuItem in _menuStrings)
@@ -29,6 +29,7 @@ class Menu
             userSelection = int.Parse(Console.ReadLine());
         } while (userSelection < 1 || userSelection > 5);
 
+        //return the user's selection
         return userSelection;
     }
 }

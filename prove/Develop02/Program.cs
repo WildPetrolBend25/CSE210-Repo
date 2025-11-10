@@ -8,7 +8,7 @@ class Program
         Menu journalMenu = new Menu();
         Entry userEntry = new Entry();
 
-    
+        //initialize userSelection
         int userSelection;
 
         bool done = false;
@@ -26,6 +26,10 @@ class Program
                     Console.WriteLine("Case 1");
                     string userResponse = userEntry.CreateEntry();
                     Console.WriteLine(userResponse);
+                    Console.WriteLine("");
+
+                    //user response stored in user response
+                    //get the data next (put that info into entry file)
                     break;
 
                 case 2:
