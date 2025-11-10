@@ -11,7 +11,6 @@ class Menu
         "3 - Save Journal to file",
         "4 - Read Journal from file",
         "5 - Quit"
-
     };
 
     /* process menu will display the menu to the user and validate the input and return the value.
@@ -22,12 +21,11 @@ class Menu
         int userSelection = 0;
         do
         {
-
-
             foreach (string menuItem in _menuStrings)
             {
                 Console.WriteLine(menuItem);
             }
+            Console.Write("Which number do you choose? ");
             userSelection = int.Parse(Console.ReadLine());
         } while (userSelection < 1 || userSelection > 5);
 
