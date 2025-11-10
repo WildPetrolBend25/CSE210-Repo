@@ -24,9 +24,8 @@ class Program
                     //call create on that object
                     //add the entry to the journal
                     Console.WriteLine("Case 1");
-                    userEntry.CreateEntry();
-                    
-
+                    string userResponse = userEntry.CreateEntry();
+                    Console.WriteLine(userResponse);
                     break;
 
                 case 2:

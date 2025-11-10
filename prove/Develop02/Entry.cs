@@ -20,10 +20,9 @@ class Entry
         Random randomGeneratior = new Random();
         int randNumber = randomGeneratior.Next(x, y);
         string randomPrompt = entryPrompts[randNumber];
-        Console.WriteLine("" + $"The {randNumber} item is: {randomPrompt}");
-
-        //return string
-        string userResponse = "Hello";
+        Console.Write($"{randomPrompt} ");
+        string userResponse = Console.ReadLine();
+    
         return userResponse;
     }
 }
