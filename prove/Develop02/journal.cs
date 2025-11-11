@@ -36,33 +36,29 @@ class Journal
         //output file
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
-            // You can add text to the file with the WriteLine method
-            outputFile.WriteLine("This will be the first line in the file.");
-
             //go through each element and then write it to the output file
             foreach (string journalEntry in fullJournal)
             {
                 outputFile.WriteLine(journalEntry);
             }
             Console.WriteLine("Your journal Entry('s) have been saved");
-            
+
         }
     }
+    
     //read all entries from a file
     public void readFromFile()
     {
         string filename = "myFile.txt";
         string[] lines = System.IO.File.ReadAllLines(filename);
 
-        Console.WriteLine("Here are all the entries in your journal");
+        //welcome to the file
+        Console.WriteLine($"Here are all your previous entries in {filename}");
+
+        //go through each item in the file
         foreach (string line in lines)
         {
-            //get the individual parts 
-            
-            // string[] parts = line.Split(",");
-            // string Date = parts[0];
-            // string prompt = parts[1];
-            // string Entry = parts[2];
+            //print each journal entry
             Console.WriteLine(line);
         }
             

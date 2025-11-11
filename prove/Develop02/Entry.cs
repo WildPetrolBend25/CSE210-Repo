@@ -31,14 +31,10 @@ class Entry
         string textVersion = now.ToString();
 
         //make the full journal entry
-        string journalEntry = $"Date: {textVersion}, Prompt: {randomPrompt}, User entry: {userResponse}";
+        string journalEntry = $"[Date]: {textVersion}, [Prompt]: {randomPrompt}, [User entry]: {userResponse}";
 
         //return the journal entry
         return journalEntry;
     }
-    // public void doesEntrywork()
-    // {
-    //     Console.WriteLine("This side is not causing problems");
-    // }
     
 }

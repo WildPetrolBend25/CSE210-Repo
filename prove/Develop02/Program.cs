@@ -25,7 +25,6 @@ class Program
                 case 1:
                     //make journal entry
                     string userResponse = _userEntry.CreateEntry();
-                    Console.WriteLine(userResponse);
 
                     //add entry to journal
                     fullJournal = _userJournal.addToJournal(userResponse);
@@ -53,7 +52,7 @@ class Program
 
                 //user enters 5 (quits the code)
                 case 5:
-                    Console.WriteLine("This quits the code");
+                    Console.WriteLine("Come back again soon");
                     done = true;
                     break;
             }
