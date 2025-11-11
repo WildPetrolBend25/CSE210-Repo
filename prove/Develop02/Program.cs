@@ -42,12 +42,13 @@ class Program
                 case 3:
                     _userJournal.writeToFile(fullJournal);
                     Console.WriteLine("");
-                    
                     break;
                 
                 //user enters 4 (read journal entry from a file)
                 case 4:
-                    Console.WriteLine("Case 4");
+                    _userJournal.readFromFile();
+                    Console.WriteLine("");
+                    
                     break;
 
                 //user enters 5 (quits the code)
