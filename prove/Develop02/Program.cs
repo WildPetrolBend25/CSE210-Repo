@@ -60,5 +60,3 @@ class Program
        
     }
 }
-//Notes:
-//entring a float number or string will crash the system ❌
