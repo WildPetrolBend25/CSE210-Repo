@@ -3,10 +3,11 @@ using System;
 class Journal
 {
     //add the journal entry to the list
-    public List<string> addToJournal(string journalEntry) //pass in journal Entry
+    private List<string> combinedJournal = new List<string>();
+
+    // Add the journal entry to the existing list
+    public List<string> addToJournal(string journalEntry)
     {
-        List<string> combinedJournal = new List<string>();
-        combinedJournal = [];
         combinedJournal.Add(journalEntry);
         return combinedJournal;
     }
@@ -18,7 +19,7 @@ class Journal
         int count = 1;
         foreach (string Entry in combinedJournal)
         {
-            Console.WriteLine($"The users displayed journal. Entry#: {count}, User Entry:{Entry}");
+            Console.WriteLine($"Entry#: {count}, User Entry:{Entry}");
             count++;
         }
     }
@@ -40,10 +41,14 @@ class Journal
     }
 
     //read all entries from a file
-    public string readFromFile()
+    public void readFromFile()
     {
         string username = "Hello";
-        return username;
+        Console.WriteLine(username);
     }
+    // public void doesThisWork()
+    // {
+    //     Console.WriteLine("not problems here");
+    // }
 
 }

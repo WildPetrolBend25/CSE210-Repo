@@ -12,29 +12,29 @@ class Program
 
         //initialize userSelection
         int userSelection;
-
+        List<string> fullJournal = new List<string>();
         bool done = false;
         //code quits when you enter 5
         do
         {
             userSelection = _journalMenu.ProcessMenu();
-            //List<string> fullJournal;
-            //string myname = "this is my name";
             switch (userSelection)
             {
                 case 1:
-                    Console.WriteLine("Case 1");
+                    //make journal entry
                     string userResponse = _userEntry.CreateEntry();
                     Console.WriteLine(userResponse);
+
+                    //add entry to journal
+                    fullJournal = _userJournal.addToJournal(userResponse);
                     Console.WriteLine("");
-                    List<string> fullJournal = _userJournal.addToJournal(userResponse);
                     break;
 
                 case 2:
-                    Console.WriteLine("Case 2");
-                    //call journal.dispaly()
-                    //_userJournal.journalDisplay(fullJournal); ❌
-                    //Console.WriteLine(myname);
+                    //display the full journal
+                    _userJournal.journalDisplay(fullJournal);
+                    Console.WriteLine("");
+                    
                     break;
 
                 case 3:
@@ -49,11 +49,12 @@ class Program
 
                 case 5:
                 //quit the code
-                    Console.WriteLine("Case 5");
+                    Console.WriteLine("This quits the code");
                     done = true;
                     break;
             }
         } while (!done);
+       
     }
 }
 

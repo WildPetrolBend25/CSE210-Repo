@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 
 class Menu
 {
@@ -32,4 +33,8 @@ class Menu
         //return the user's selection
         return userSelection;
     }
+    // public void doesMenuWork()
+    // {
+    //     Console.WriteLine("there is no problem here");
+    // }
 }

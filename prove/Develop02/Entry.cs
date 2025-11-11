@@ -36,6 +36,9 @@ class Entry
         //return the journal entry
         return journalEntry;
     }
-    
+    // public void doesEntrywork()
+    // {
+    //     Console.WriteLine("This side is not causing problems");
+    // }
     
 }
