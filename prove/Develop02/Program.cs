@@ -1,12 +1,14 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
     static void Main(string[] args)
     {
         // create new instances
-        Menu journalMenu = new Menu();
-        Entry userEntry = new Entry();
+        Menu _journalMenu = new Menu();
+        Entry _userEntry = new Entry();
+        Journal _userJournal = new Journal();
 
         //initialize userSelection
         int userSelection;
@@ -15,26 +17,24 @@ class Program
         //code quits when you enter 5
         do
         {
-            userSelection = journalMenu.ProcessMenu();
-
+            userSelection = _journalMenu.ProcessMenu();
+            //List<string> fullJournal;
+            //string myname = "this is my name";
             switch (userSelection)
             {
                 case 1:
-                    //create a new entry object
-                    //call create on that object
-                    //add the entry to the journal
                     Console.WriteLine("Case 1");
-                    string userResponse = userEntry.CreateEntry();
+                    string userResponse = _userEntry.CreateEntry();
                     Console.WriteLine(userResponse);
                     Console.WriteLine("");
-
-                    //user response stored in user response
-                    //get the data next (put that info into entry file)
+                    List<string> fullJournal = _userJournal.addToJournal(userResponse);
                     break;
 
                 case 2:
-                //call journal.dispaly()
                     Console.WriteLine("Case 2");
+                    //call journal.dispaly()
+                    //_userJournal.journalDisplay(fullJournal); ❌
+                    //Console.WriteLine(myname);
                     break;
 
                 case 3:

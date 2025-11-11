@@ -22,7 +22,8 @@ class Entry
         string randomPrompt = entryPrompts[randNumber];
 
         //get user response
-        Console.Write($"{randomPrompt} ");
+        Console.WriteLine($"{randomPrompt}");
+        Console.Write("> ");
         string userResponse = Console.ReadLine();
 
         //get the date time
@@ -35,4 +36,6 @@ class Entry
         //return the journal entry
         return journalEntry;
     }
+    
+    
 }
