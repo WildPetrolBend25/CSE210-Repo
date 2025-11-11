@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Journal
 {
@@ -15,17 +16,19 @@ class Journal
     //go through all items in the journal
     public void journalDisplay(List<string> combinedJournal)
     {
+        //Welcome the the journal
+        Console.WriteLine("Here is your combinded journal");
         //run through the journal 
         int count = 1;
         foreach (string Entry in combinedJournal)
         {
-            Console.WriteLine($"Entry#: {count}, User Entry:{Entry}");
+            Console.WriteLine($"Entry#: {count}, {Entry}");
             count++;
         }
     }
 
     //write all items in the journal to a file
-    public void writeToFile() //add the journalEntry parameter
+    public void writeToFile(List<string> fullJournal) //add the journalEntry parameter
     {
         string filename = "myFile.txt";
 
@@ -35,8 +38,12 @@ class Journal
             outputFile.WriteLine("This will be the first line in the file.");
 
             // You can use the $ and include variables just like with Console.WriteLine
-            string color = "Blue";
-            outputFile.WriteLine($"My favorite color is {color}");
+            foreach (string journalEntry in fullJournal)
+            {
+                outputFile.WriteLine(journalEntry);
+            }
+            Console.WriteLine("Your journal Entry('s) have been saved");
+            
         }
     }
 

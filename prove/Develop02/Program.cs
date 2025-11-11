@@ -10,16 +10,18 @@ class Program
         Entry _userEntry = new Entry();
         Journal _userJournal = new Journal();
 
-        //initialize userSelection
+        //initialize global variables
         int userSelection;
         List<string> fullJournal = new List<string>();
+
+        //while loop to run through our prompt
         bool done = false;
-        //code quits when you enter 5
         do
         {
             userSelection = _journalMenu.ProcessMenu();
             switch (userSelection)
             {
+                //user enters 1 (creates a journal entry)
                 case 1:
                     //make journal entry
                     string userResponse = _userEntry.CreateEntry();
@@ -30,25 +32,26 @@ class Program
                     Console.WriteLine("");
                     break;
 
+                //user enter 2 (displays the full journal)
                 case 2:
-                    //display the full journal
                     _userJournal.journalDisplay(fullJournal);
+                    Console.WriteLine("");
+                    break;
+
+                //user enters 3 (save journal to a file)
+                case 3:
+                    _userJournal.writeToFile(fullJournal);
                     Console.WriteLine("");
                     
                     break;
-
-                case 3:
-                //save to a file
-                    Console.WriteLine("Case 3");
-                    break;
-
+                
+                //user enters 4 (read journal entry from a file)
                 case 4:
-                //read from a file
                     Console.WriteLine("Case 4");
                     break;
 
+                //user enters 5 (quits the code)
                 case 5:
-                //quit the code
                     Console.WriteLine("This quits the code");
                     done = true;
                     break;
@@ -57,5 +60,5 @@ class Program
        
     }
 }
-
-//entring a float number or string will crash the system
+//Notes:
+//entring a float number or string will crash the system ❌
