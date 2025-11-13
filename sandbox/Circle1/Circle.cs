@@ -22,9 +22,19 @@ class Circle
             
         }
     }
-    
+
     public double GetCircleArea()
     {
         return 3.1415 * _radius * _radius;
+    }
+
+    public double GetCircumference()
+    {
+        return _radius * 2 * Math.PI;
+    }
+    
+    public double GetDiameter()
+    {
+        //nothing here yet
     }
 }
