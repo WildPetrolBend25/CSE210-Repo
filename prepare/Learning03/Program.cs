@@ -13,7 +13,11 @@ class Program
         {
             Console.WriteLine("The Word is hidden");
         }
-    }
 
+        //Console.WriteLine(myWord.GetWordString()); ???
+        myWord.DisplayWord();
+
+
+    }
 }
 

@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Reflection.PortableExecutable;
 
 class Word
 {
@@ -16,8 +17,31 @@ class Word
     //display method
     public void DisplayWord()
     {
-        Console.WriteLine(_word);
+        //Console.WriteLine(_word);
+        Console.WriteLine(LocalGetWordString());
     }
+
+    private string LocalGetWordString()
+    {
+        //if the word is hidden, return underscore characters for the word.
+        //one for each character in the word.
+        //else return the actual word.
+        if (_isHidden)
+        {
+            string newString = "";
+            foreach(char c in _word)
+            {
+                newString += '_';
+            }
+            return newString;
+        }
+        else
+        {
+            return _word;
+        }
+        
+    }
+
 
     //is hidden getter
     public bool IsHidden()
