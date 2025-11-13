@@ -8,6 +8,11 @@ class Program
         //new instance of word
         Word myWord = new Word("Uncle");
         myWord.DisplayWord();
+        myWord.HideWord();
+        if (myWord.IsHidden())
+        {
+            Console.WriteLine("The Word is hidden");
+        }
     }
 
 }

@@ -18,4 +18,16 @@ class Word
     {
         Console.WriteLine(_word);
     }
+
+    //is hidden getter
+    public bool IsHidden()
+    {
+        return _isHidden;
+    }
+
+    //hide word method setter
+    public void HideWord()
+    {
+        _isHidden = true;
+    }
 }
