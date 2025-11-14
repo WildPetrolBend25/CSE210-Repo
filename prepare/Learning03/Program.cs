@@ -7,11 +7,12 @@ class Program
     {
         //new instances
         Word myWord = new Word("uncle");
-        //List<string> ListofWords = ["Hi", "how","are","you"];
-        // List<string> TrySomeWords = ["Hi", "how","are","you"];
-        // Scripture NewList = new Scripture(TrySomeWords);
-        // List<string> obtainedlist= NewList.GetScriptureList();
-        //Word newWord2 = new Word(obtainedlist);
+
+        // try passing in a list of words to a different constructor
+        List<string> myList = new List<string>();
+        myList = ["Hello", "how","are","you"];
+        Word myListWord = new Word(myList);
+        myListWord.DisplayList();
 
         //Call methods
         myWord.HideWord(); //sets the bool value from false to true
@@ -28,8 +29,12 @@ class Program
         //displays the word after hiding or not hiding it
         myWord.DisplayWord();
 
-       
+
 
     }
 }
+
+
+// Notes:
+// make sure that all items in a list are returned as as ____, _____, _____
 

@@ -1,62 +1,56 @@
 using System;
-using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
     static void Main(string[] args)
     {
         // create new instances
-        Menu _journalMenu = new Menu();
-        Entry _userEntry = new Entry();
-        Journal _userJournal = new Journal();
+        Menu journalMenu = new Menu();
+        Entry userEntry = new Entry();
 
-        //initialize global variables
+        //initialize userSelection variable
         int userSelection;
-        List<string> fullJournal = new List<string>();
 
-        //while loop to run through our prompt
+        //code quits when you enter 5
         bool done = false;
         do
         {
-            userSelection = _journalMenu.ProcessMenu();
+            userSelection = journalMenu.ProcessMenu();
+
             switch (userSelection)
             {
-                //user enters 1 (creates a journal entry)
                 case 1:
-                    //make journal entry
-                    string userResponse = _userEntry.CreateEntry();
-
-                    //add entry to journal
-                    fullJournal = _userJournal.addToJournal(userResponse);
-                    Console.WriteLine("");
+                    //create a new entry object
+                    //call create on that object
+                    //add the entry to the journal
+                    string userResponse = userEntry.CreateEntry();
+                    Console.WriteLine("Case 1");
+                    Console.WriteLine(userResponse);
                     break;
 
-                //user enter 2 (displays the full journal)
                 case 2:
-                    _userJournal.journalDisplay(fullJournal);
-                    Console.WriteLine("");
+                //call journal.dispaly()
+                    Console.WriteLine("Case 2");
                     break;
 
-                //user enters 3 (save journal to a file)
                 case 3:
-                    _userJournal.writeToFile(fullJournal);
-                    Console.WriteLine("");
-                    break;
-                
-                //user enters 4 (read journal entry from a file)
-                case 4:
-                    _userJournal.readFromFile();
-                    Console.WriteLine("");
-                    
+                //save to a file
+                    Console.WriteLine("Case 3");
                     break;
 
-                //user enters 5 (quits the code)
+                case 4:
+                //read from a file
+                    Console.WriteLine("Case 4");
+                    break;
+
                 case 5:
-                    Console.WriteLine("Come back again soon");
+                //quit the code
+                    Console.WriteLine("Case 5");
                     done = true;
                     break;
             }
         } while (!done);
-       
     }
 }
+
+//entring a float number or string will crash the system
