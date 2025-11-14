@@ -17,11 +17,11 @@ class Word
     //display method
     public void DisplayWord()
     {
-        //Console.WriteLine(_word);
-        Console.WriteLine(LocalGetWordString());
+        Console.WriteLine($"The original word: {_word}"); //originlal word
+        Console.WriteLine($"The word, when hidden:{LocalGetWordString()}"); //hidden word
     }
 
-    private string LocalGetWordString()
+    public string LocalGetWordString()
     {
         //if the word is hidden, return underscore characters for the word.
         //one for each character in the word.
@@ -41,7 +41,6 @@ class Word
         }
         
     }
-
 
     //is hidden getter
     public bool IsHidden()
