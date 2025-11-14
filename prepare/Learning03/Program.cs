@@ -12,7 +12,14 @@ class Program
         List<string> myList = new List<string>();
         myList = ["Hello", "how","are","you"];
         Word myListWord = new Word(myList);
-        myListWord.DisplayList();
+        // myListWord.DisplayList();
+
+        foreach (string item in myList)
+        {
+            Word wordObject = new Word(item);
+            wordObject.HideWord();
+            wordObject.DisplayWord();
+        }
 
         //Call methods
         myWord.HideWord(); //sets the bool value from false to true
@@ -36,5 +43,6 @@ class Program
 
 
 // Notes:
-// make sure that all items in a list are returned as as ____, _____, _____
+// got a list passed in through a constructor (((✅)))
+// make sure that all items in a list are returned as as ____, _____, _____ ((()))
 
