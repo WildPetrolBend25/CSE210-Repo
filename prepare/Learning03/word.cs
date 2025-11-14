@@ -6,11 +6,13 @@ class Word
     //private attributes
     private string _word;
     private bool _isHidden;
+    //private List<string> _listofWords;
 
     //word constructor
     public Word(string word)
     {
         _word = word;
+        //_listofWords = word;
         _isHidden = false;
     }
     
@@ -39,7 +41,6 @@ class Word
         {
             return _word;
         }
-        
     }
 
     //is hidden getter
@@ -48,7 +49,7 @@ class Word
         return _isHidden;
     }
 
-    //hide word method setter
+    //hide word method setter. Sets bool value to true
     public void HideWord()
     {
         _isHidden = true;

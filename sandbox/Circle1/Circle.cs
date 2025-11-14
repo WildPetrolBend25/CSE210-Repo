@@ -33,8 +33,5 @@ class Circle
         return _radius * 2 * Math.PI;
     }
     
-    public double GetDiameter()
-    {
-        //nothing here yet
-    }
+    
 }
