@@ -9,7 +9,6 @@ class Program
         Reference ref1 = new Reference("John", 3, 16); 
         Scripture scripture1 = new Scripture(ref1, "For God so loved the world that he sent his only begotten son");
 
-
         scripture1.GetDispalyText();
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.IO.Compression;
 class Reference
 {
     //attributes 
@@ -13,6 +14,7 @@ class Reference
         _book = book;
         _chapter = chapter;
         _startVerse = startVerse;
+        _endVerse = 0;
 
     }
 
@@ -27,13 +29,18 @@ class Reference
 
     public string GetReference()
     {
-        string scriptureRef = $"{_book} {_chapter}: {_startVerse}-{_endVerse}";
-        return scriptureRef;
+        // check is endverse is null type or not
+        if (_endVerse == 0)
+        {
+            string oneVerse = $"{_book} {_chapter}: {_startVerse}";
+            return oneVerse;
+        }
+        else
+        {
+            string multiVerse = $"{_book} {_chapter}: {_startVerse} - {_endVerse}";
+            return multiVerse;
+        }
+        
     }
 
-    public string DisplayReference()
-    {
-        string _reference = $"{_book} {_chapter}: {_startVerse}-{_endVerse}";
-        return _reference;
-    }
 }
