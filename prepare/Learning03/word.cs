@@ -3,41 +3,41 @@ using System.Reflection.PortableExecutable;
 
 class Word
 {
-    //private attributes🧡
-    private string _word;
+    //private attributes
+    private string _word; 
     private bool _isHidden;
     private List<string> _listofWords;
 
-    //word constructor #1🧡
+    //word constructor #1
     public Word(string word)
     {
         _word = word;
-        //_listofWords = word;
+        
         _isHidden = false;
     }
 
-    //constructor that accepts lists #2 ((((((✅))))))💚
+    //constructor that accepts lists #2 ((((((✅))))))
     public Word(List<string> listofWords)
     {
         _listofWords = listofWords;
     }
 
-    //display method💚
+    //display method 
     public void DisplayWord()
     {
         Console.WriteLine($"The original word: {_word}"); //originlal word
         Console.WriteLine($"The word, when hidden:{GetWordString()} {GetWordString().Length}"); //hidden word
     }
 
-    // Just for testing purposes, did it pass into the function properly ((((((✅))))))
-    public void DisplayList()
-    {
-        Console.WriteLine("It go passed in... i hope");
-        foreach (string item in _listofWords)
-        {
-            Console.WriteLine($"{item}");
-        }
-    }
+    // // Just for testing purposes, did it pass into the function properly ((((((✅)))))) ❌
+    // public void DisplayList()
+    // {
+    //     Console.WriteLine("It go passed in... i hope");
+    //     foreach (string item in _listofWords)
+    //     {
+    //         Console.WriteLine($"{item}");
+    //     }
+    // }
 
     public string GetWordString()
     {

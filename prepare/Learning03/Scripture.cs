@@ -4,19 +4,26 @@ using System.Security.Cryptography.X509Certificates;
 class Scripture
 {
     //private attributes
-    private List<string> _ScriptureList = [];
+    private string _scrReference;
+    private string _words;
 
-    //ScriptureList Getter
-    public List<string> GetScriptureList()
+    public Scripture(Reference reference, string words)
     {
-        return _ScriptureList;
-    }
-
-    //Scripture Constrcuctor
-    public Scripture(List<string> list)
-    {
-        _ScriptureList = list;
+        _scrReference = $"{reference}, {words}";
     }
     
-    
+    public void GetDispalyText()
+    {
+        Console.WriteLine(_scrReference);
+    }
+
+    public void HideRandomWord()
+    {
+        //nothing here yet 
+    }
+
+    public void CompletlyHidden()
+    {
+        // checks to see if all word are hidden or not
+    }
 }

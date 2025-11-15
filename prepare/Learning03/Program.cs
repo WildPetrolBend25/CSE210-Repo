@@ -5,39 +5,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        //new instances
-        Word myWord = new Word("uncle");
-
-        // try passing in a list of words to a different constructor
-        List<string> myList = new List<string>();
-        myList = ["Hello", "how","are","you"];
-        Word myListWord = new Word(myList);
-        // myListWord.DisplayList();
-
-        foreach (string item in myList)
-        {
-            Word wordObject = new Word(item);
-            wordObject.HideWord();
-            wordObject.DisplayWord();
-        }
-
-        //Call methods
-        myWord.HideWord(); //sets the bool value from false to true
-        if (myWord.IsHidden())
-        {
-            //if bool is true, then the word is hidden
-            Console.WriteLine("The Word is hidden");
-        }
-        else
-        {
-            //if bool value is false
-            Console.WriteLine("Is not hidden... yet");
-        }
-        //displays the word after hiding or not hiding it
-        myWord.DisplayWord();
+        //set up our instances of data 
+        Reference ref1 = new Reference("John", 3, 16); 
+        Scripture scripture1 = new Scripture(ref1, "For God so loved the world that he sent his only begotten son");
 
 
-
+        scripture1.GetDispalyText();
     }
 }
 
