@@ -4,17 +4,17 @@ using System.Security.Cryptography.X509Certificates;
 class Scripture
 {
     //private attributes
-    private string _scrReference;
-    private string _words;
+    private Reference _reference;
+    private List<string> _words;
 
-    public Scripture(Reference reference, string words)
+    public Scripture(Reference reference, string text)
     {
-        _scrReference = $"{reference}, {words}";
+        _reference = reference;
     }
     
-    public void GetDispalyText()
+    public void GetDisplayText()
     {
-        Console.WriteLine(_scrReference);
+        //nothing here yet 
     }
 
     public void HideRandomWord()
