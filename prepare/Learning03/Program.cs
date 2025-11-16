@@ -39,4 +39,6 @@ class Program
     }
 }
 
+// Creativity notes:
+//my brain got so cooked from this assignment that I didn't add anythin else creative 😂 (next time tho)
 
