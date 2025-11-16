@@ -6,44 +6,29 @@ class Word
     //private attributes
     private string _word; 
     private bool _isHidden;
-    private List<string> _listofWords;
 
-    //word constructor #1
+    //word constructor
     public Word(string word)
     {
         _word = word;
-        
         _isHidden = false;
     }
 
-    //constructor that accepts lists #2 ((((((✅))))))
-    public Word(List<string> listofWords)
+    //getter 
+    public void HideWord()
     {
-        _listofWords = listofWords;
+        _isHidden = true;
     }
 
-    //display method 
-    public void DisplayWord()
+    //setter 
+    public bool IsHidden()
     {
-        Console.WriteLine($"The original word: {_word}"); //originlal word
-        Console.WriteLine($"The word, when hidden:{GetWordString()} {GetWordString().Length}"); //hidden word
+        return _isHidden;
     }
 
-    // // Just for testing purposes, did it pass into the function properly ((((((✅)))))) ❌
-    // public void DisplayList()
-    // {
-    //     Console.WriteLine("It go passed in... i hope");
-    //     foreach (string item in _listofWords)
-    //     {
-    //         Console.WriteLine($"{item}");
-    //     }
-    // }
 
-    public string GetWordString()
+    public string GetDisplayWord()
     {
-        //if the word is hidden, return underscore characters for the word.
-        //one for each character in the word.
-        //else return the actual word.
         if (_isHidden)
         {
             string newString = "";
@@ -58,16 +43,5 @@ class Word
             return _word;
         }
     }
-
-    //is hidden getter
-    public bool IsHidden()
-    {
-        return _isHidden;
-    }
-
-    //hide word method setter. Sets bool value to true
-    public void HideWord()
-    {
-        _isHidden = true;
-    }
+  
 }
