@@ -17,7 +17,7 @@ class Person
     }
 
     //display perosnal info
-    public string PersonalInformation()
+    public string GetPersonalInformation()
     {
         string PerInfo = $"{_firstName}, {_lastName}, Age:{_age}, weight:{_weight}";
         return PerInfo;

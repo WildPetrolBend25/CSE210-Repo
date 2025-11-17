@@ -7,4 +7,10 @@ class Police : Person
     {
         _weapons = weapons;
     }
+
+    //calls method in person class
+    public string GetPoliceInformation()
+    {
+        return $"{base.GetPersonalInformation()}, Weapons: {_weapons}";
+    }
 }
