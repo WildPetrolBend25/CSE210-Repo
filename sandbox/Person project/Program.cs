@@ -12,6 +12,12 @@ class Program
         
         //print infor from inherited police class
         Police myPolice = new Police("Taser, gun", "Bob", "Billy", 35, 250);
+
+        Doctor myDoctor = new Doctor("knife, needle", "billy", "jones", 45, 134);
+
+        //can access methods in parent classes directly
         Console.WriteLine(myPolice.GetPersonalInformation());
+        Console.WriteLine(myPolice.GetPoliceInformation());
+        Console.WriteLine(myDoctor.DoctorInformation());
     }
 }
