@@ -1,31 +1,30 @@
 using System;
 
-class Assignments
+class Activity
 {
     //attributes
-    private string[] _menuStrings =
-    {
-        "Welcome to count",
-        "You can create, display, save, and read journal entries",
-        "1 - Create Journal Entry",
-        "2 - Display Journal",
-        "3 - Save Journal to file",
-        "4 - Read Journal from file",
-        "5 - Quit"
-    };
-    private string _welcomeMSG;
-    private string _endMSG;
+    private string _name;
+    private string _description;
+    private int _duration;
+    DateTime _endTime;
 
     //constructors
-    public Assignments(string welcomeMSG, string byeMSG)
+    public Activity(string name, string description)
     {
-        _welcomeMSG = welcomeMSG;
-        _endMSG = byeMSG;
+        _name = name;
+        _description = description;
+        _duration = 0;
+        _endTime = DateTime.Now;
     }
 
     //methods
-    public string DisplayWelcomeMSG()
+    public string DisplayWelcome()
     {
-        return $"Welcome message: {_welcomeMSG}";
+        return $"Weclome to the {_name} activity";
+    }
+
+    public string DisplayDescription()
+    {
+        return $"{_description}";
     }
 }
