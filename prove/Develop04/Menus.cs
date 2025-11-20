@@ -6,9 +6,10 @@ class Menu
     //attributes
     protected string[] _menu = {
         "Activity Menu",
-        "1. Breathing Activity",
-        "2. Reflection Activity",
-        "3. Listing Activity"
+        "1. Base Activity",
+        "2. Breathing Activity",
+        "3. Reflection Activity",
+        "4. Listing Activity"
     };
     
 
@@ -40,7 +41,7 @@ class Menu
             {
                 number = int.Parse(input);
 
-                if (number < 1 || number > 3)
+                if (number < 1 || number > 4)
                 {
                     Console.WriteLine("Please enter a valid number");
                 }

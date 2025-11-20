@@ -15,17 +15,25 @@ class Program
         myMenu.DisplayMenu(); //get the menu displayed
         int userinput = myMenu.GetUserInput(); //get the user's input
 
-        //move into other activities
-        bool done = false;
-        while (!done)
+        //moveing into other activities
+        if (userinput == 1)
         {
-            if (userinput == 1)
-            {
-                Console.WriteLine(myAssignment.DisplayWelcome());
-                Console.WriteLine(myAssignment.DisplayDescription());
-                done = true;
-            }
+            Console.WriteLine(myAssignment.DisplayWelcome());
+            Console.WriteLine(myAssignment.DisplayDescription());
             
         }
+        else if (userinput == 2)
+        {
+            Console.WriteLine("We'll put the breathing activity here");
+        }
+        else if(userinput == 3)
+        {
+            Console.WriteLine("This is where reflections will go");
+        }
+        else
+        {
+            Console.WriteLine("this is where the list activity will go");
+        }
+    
     }
 }
