@@ -13,11 +13,9 @@ class Program
 
         //Method calling
         myMenu.DisplayMenu(); //get the menu displayed
+        int userinput = myMenu.GetUserInput(); //get the user's input
 
-        int userinput = 0; //ask for user input
-        Console.Write("What is your input? ");
-        string ReadLine = Console.ReadLine();
-        userinput = int.Parse(ReadLine);
+        //move into other activities
         bool done = false;
         while (!done)
         {
