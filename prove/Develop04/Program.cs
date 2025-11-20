@@ -9,10 +9,12 @@ class Program
 
         //Instances
         Activity myAssignment = new Activity("Base", "This is the base activity");
+        Menu myMenu = new Menu();
 
         //Method calling
-        
-        int userinput = 0;
+        myMenu.DisplayMenu(); //get the menu displayed
+
+        int userinput = 0; //ask for user input
         Console.Write("What is your input? ");
         string ReadLine = Console.ReadLine();
         userinput = int.Parse(ReadLine);
