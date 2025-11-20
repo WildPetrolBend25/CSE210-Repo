@@ -59,7 +59,6 @@ class Menu
                 Console.WriteLine("Something went wrong. Please try again.");
             }
     
-            // If we get here → input was bad → loop starts over
             Console.WriteLine(); // blank line for neatness
             
         } while (!done);
