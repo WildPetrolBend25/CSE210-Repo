@@ -17,8 +17,14 @@ class Program
         myMenu.DisplayMenu(); //get the menu displayed
         int userinput = myMenu.GetUserInput(); //get the user's input
 
-        //pause the code for a bit 
-        myActivity.PauseProgram();
+        //make it look like code is loading
+        myActivity.DisplaySpinner(); //((✅))
+
+        //test AddSeconds. What does it do?
+        myActivity.AddSeconds(); //((✅))
+
+        //countdown annimation
+        myActivity.RunCountDown();
 
 
         //move into other activites
@@ -40,9 +46,6 @@ class Program
             {
                 Console.WriteLine("this is where the list activity will go");
             }
-
-        
-        
 
     }
 }

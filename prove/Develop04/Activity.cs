@@ -28,18 +28,8 @@ class Activity
         return $"{_description}";
     }
 
-    public void PauseProgram()
-    {
-        Console.WriteLine("Going to sleep for a second...");
-        Thread.Sleep(1000);
-        DisplaySpinner();
-        Console.WriteLine("I'm back!!");
-        Console.WriteLine("");
-    }
-
     public void DisplaySpinner()
     {
-
         char[] frames = { '/', '-', '\\', '|' };
         _duration = 5;
 
@@ -60,6 +50,34 @@ class Activity
         Console.SetCursorPosition(0, currentLineCursor);
         Console.Write(new string(' ', Console.WindowWidth));
         Console.SetCursorPosition(0, currentLineCursor);
-
     } 
+
+    public void AddSeconds()
+    { 
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5);
+
+        Thread.Sleep(3000);
+
+        DateTime currentTime = DateTime.Now;
+        if (currentTime < futureTime)
+        {
+            Console.WriteLine("We have not arrived at our future time yet...");
+        }
+        else
+        {
+            Console.WriteLine("We are at a future time now");
+        }
+    }
+
+    public void RunCountDown()
+    {
+        for (int i = 5; i > 0; i--)
+        {
+            Console.Write("\b" + i);
+            Thread.Sleep(1000);
+        }
+        Console.Write("\b");
+        Console.WriteLine("Done");
+    }
 }
