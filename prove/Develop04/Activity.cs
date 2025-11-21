@@ -2,13 +2,13 @@ using System;
 
 class Activity
 {
-    //attributes
+    //attributes ((🟦🟦🟦))
     private string _name;
     private string _description;
     private int _duration;
     DateTime _endTime;
 
-    //constructors
+    //constructors ((🟩🟩🟩))
     public Activity(string name, string description)
     {
         _name = name;
@@ -17,37 +17,19 @@ class Activity
         _endTime = DateTime.Now;
     }
 
-    public void AddSeconds()
-    { 
-        DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5);
-
-        Thread.Sleep(3000);
-
-        DateTime currentTime = DateTime.Now;
-        if (currentTime < futureTime)
-        {
-            Console.WriteLine("We have not arrived at our future time yet...");
-        }
-        else
-        {
-            Console.WriteLine("We are at a future time now");
-        }
-    }
    
-
-    //methods
-    public string DisplayWelcome()
+    //methods ((🟧🟧🟧))
+    public string DisplayWelcome() //((✅))
     {
         return $"Weclome to the {_name} activity";
     }
 
-    public string DisplayDescription()
+    public string DisplayDescription() //((✅))
     {
         return $"{_description}";
     }
 
-    public void DisplaySpinner(string message, int seconds)
+    public void DisplaySpinner(string message, int seconds) //((🦺))
     {
         char[] frames = { '/', '-', '\\', '|' };
         _duration = 5;
@@ -71,15 +53,74 @@ class Activity
         Console.SetCursorPosition(0, currentLineCursor);
     } 
 
-
-    public void RunCountDown(string message, int seconds)
+    public int ObtainDurration() //((✅))
     {
-        for (int i = 5; i > 0; i--)
+        Console.Write("How many seconds would you like to this activity for? ");
+        string input = Console.ReadLine();
+        int seconds = int.Parse(input);
+        return seconds;
+    }
+
+
+    public void RunCountDown(string message, int seconds) //((🦺))
+    {
+        DateTime startTime = DateTime.Now;
+        _endTime = startTime.AddSeconds(seconds); 
+        DateTime currentTime = DateTime.Now;
+
+        Thread.Sleep(1000);
+        int[] _countDown =
         {
-            Console.Write("\b" + i);
-            Thread.Sleep(1000);
+            6, 5, 4, 3, 2, 1
+        };
+
+        bool done = false;
+        while (!done)
+        {
+            if (currentTime != _endTime)
+            {
+                foreach (int item in _countDown)
+                {
+                    if(item < _countDown.Count())
+                    {
+                        Thread.Sleep(1000);
+                        Console.Write("\b" + item);
+                    }
+                } 
+            }
+            else
+            {
+                done = true;
+            }
+            
+            // for (int i = 5; i > 0; i--)
+            // {
+            //     Console.Write("\b" + i);
+            //     Thread.Sleep(1000);
+            // }
+            // Console.Write("\b");
+            // Console.WriteLine("Done");
         }
         Console.Write("\b");
         Console.WriteLine("Done");
+        
+    }
+
+    public void AddSeconds() //((🦺))
+    { 
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5);
+
+        Thread.Sleep(3000);
+
+        DateTime currentTime = DateTime.Now;
+        if (currentTime < futureTime)
+        {
+            Console.WriteLine("We have not arrived at our future time yet...");
+        }
+        else
+        {
+            Console.WriteLine("We are at a future time now");
+        }
     }
 }

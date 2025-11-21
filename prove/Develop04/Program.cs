@@ -9,12 +9,12 @@ class Program
         //test code
         Console.WriteLine("Hello Develop04 World!\n");
 
-        //Instances
+        //Instances ((🟦🟦🟦))
         Activity myActivity = new Activity("Base", "This is the base activity");
         Menu myMenu = new Menu();
         Breathing breathingActivity = new Breathing("Breathing Activity", "Here, you'll practice your breathing");
 
-        //Method calling
+        //Method calling ((🟩🟩🟩))
         myMenu.DisplayMenu(); //get the menu displayed
         int userinput = myMenu.GetUserInput(); //get the user's input
 
@@ -26,7 +26,7 @@ class Program
         //myActivity.RunCountDown(); //(((✅)))
 
 
-        //move into other activites
+        //move into other activites ((🟧🟧🟧))
         if (userinput == 1)
             {
                 Console.WriteLine(myActivity.DisplayWelcome());
@@ -39,14 +39,20 @@ class Program
 
                 Console.WriteLine(breathingActivity.DisplayWelcome());
                 Console.WriteLine(breathingActivity.DisplayDescription());
+                int durration = breathingActivity.ObtainDurration();
+                breathingActivity.RunCountDown("hello", durration);
             }
             else if(userinput == 3)
             {
                 Console.WriteLine("This is where reflections will go");
             }
-            else
+            else if (userinput == 4)
             {
                 Console.WriteLine("this is where the list activity will go");
+            }
+            else
+            {
+                Console.WriteLine("You've quit the program");
             }
 
     }

@@ -3,23 +3,24 @@ using System.Runtime.CompilerServices;
 
 class Menu
 {
-    //attributes
+    //attributes ((🟦🟦🟦))
     protected string[] _menu = {
         "Activity Menu",
         "1. Base Activity",
         "2. Breathing Activity",
         "3. Reflection Activity",
-        "4. Listing Activity"
+        "4. Listing Activity",
+        "5. Quit"
     };
     
 
-    //constrcutors
+    //constrcutors ((🟩🟩🟩))
     public Menu()
     {
         //nothing here to see
     }
 
-    //methods
+    //methods ((🟧🟧🟧))
     public void DisplayMenu()
     {
         foreach (string item in _menu)
@@ -41,7 +42,7 @@ class Menu
             {
                 number = int.Parse(input);
 
-                if (number < 1 || number > 4)
+                if (number < 1 || number > 5)
                 {
                     Console.WriteLine("Please enter a valid number");
                 }

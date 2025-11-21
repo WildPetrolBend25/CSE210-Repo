@@ -9,5 +9,9 @@ class Breathing : Activity
     }
 
     //methods
+    public void RunBActivity()
+    {
+        //nothing here yet
+    }
 
 }
