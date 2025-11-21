@@ -12,19 +12,18 @@ class Program
         //Instances
         Activity myActivity = new Activity("Base", "This is the base activity");
         Menu myMenu = new Menu();
+        Breathing breathingActivity = new Breathing("Breathing Activity", "Here, you'll practice your breathing");
 
         //Method calling
         myMenu.DisplayMenu(); //get the menu displayed
         int userinput = myMenu.GetUserInput(); //get the user's input
 
         //make it look like code is loading
-        myActivity.DisplaySpinner(); //((✅))
-
+        //myActivity.DisplaySpinner(); //((✅))
         //test AddSeconds. What does it do?
-        myActivity.AddSeconds(); //((✅))
-
+        //myActivity.AddSeconds(); //((✅))
         //countdown annimation
-        myActivity.RunCountDown();
+        //myActivity.RunCountDown(); //(((✅)))
 
 
         //move into other activites
@@ -36,7 +35,10 @@ class Program
             }
             else if (userinput == 2)
             {
-                Console.WriteLine("We'll put the breathing activity here");
+                Console.WriteLine("We'll put the breathing activity here"); //(((❌)))
+
+                Console.WriteLine(breathingActivity.DisplayWelcome());
+                Console.WriteLine(breathingActivity.DisplayDescription());
             }
             else if(userinput == 3)
             {

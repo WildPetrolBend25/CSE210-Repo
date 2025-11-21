@@ -17,6 +17,25 @@ class Activity
         _endTime = DateTime.Now;
     }
 
+    public void AddSeconds()
+    { 
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5);
+
+        Thread.Sleep(3000);
+
+        DateTime currentTime = DateTime.Now;
+        if (currentTime < futureTime)
+        {
+            Console.WriteLine("We have not arrived at our future time yet...");
+        }
+        else
+        {
+            Console.WriteLine("We are at a future time now");
+        }
+    }
+   
+
     //methods
     public string DisplayWelcome()
     {
@@ -28,7 +47,7 @@ class Activity
         return $"{_description}";
     }
 
-    public void DisplaySpinner()
+    public void DisplaySpinner(string message, int seconds)
     {
         char[] frames = { '/', '-', '\\', '|' };
         _duration = 5;
@@ -52,25 +71,8 @@ class Activity
         Console.SetCursorPosition(0, currentLineCursor);
     } 
 
-    public void AddSeconds()
-    { 
-        DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5);
 
-        Thread.Sleep(3000);
-
-        DateTime currentTime = DateTime.Now;
-        if (currentTime < futureTime)
-        {
-            Console.WriteLine("We have not arrived at our future time yet...");
-        }
-        else
-        {
-            Console.WriteLine("We are at a future time now");
-        }
-    }
-
-    public void RunCountDown()
+    public void RunCountDown(string message, int seconds)
     {
         for (int i = 5; i > 0; i--)
         {
