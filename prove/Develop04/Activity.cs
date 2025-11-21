@@ -39,19 +39,27 @@ class Activity
 
     public void DisplaySpinner()
     {
-        int duration = 5;  // about 15 seconds total
+
         char[] frames = { '/', '-', '\\', '|' };
+        _duration = 5;
 
-        Console.Write("Loading ");  // Starting text
+        Console.Write("Loading ");
 
-        for (int i = 0; i < duration * 4; i++)
+        for (int i = 0; i < 5; i++)
         {
-            Console.Write("\b" + frames[i % 4]);  // Overwrite the previous character
-            Console.Out.Flush();                  // ← THIS IS THE KEY!
-            Thread.Sleep(250);                    // 4 frames per second
+            foreach (char item in frames)
+            {
+                Console.Write("\b" + item);
+                Thread.Sleep(250);
+            }
         }
-
         Console.Write("\b ");  // Final cleanup: erase the spinner
-        Console.Out.Flush();
+
+        //set the cursor to pos 0 and erase "Loading" + move cursor to the next line
+        int currentLineCursor = Console.CursorTop;
+        Console.SetCursorPosition(0, currentLineCursor);
+        Console.Write(new string(' ', Console.WindowWidth));
+        Console.SetCursorPosition(0, currentLineCursor);
+
     } 
 }
