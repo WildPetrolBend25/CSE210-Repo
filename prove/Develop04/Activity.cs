@@ -62,7 +62,7 @@ class Activity
     }
 
 
-    public void RunCountDown(string message, int seconds) //((🦺))
+    public void RunCountDown(int seconds) //((✅))
     {
         for (int i = seconds; i > 0; i--)
         {
@@ -70,8 +70,10 @@ class Activity
             Thread.Sleep(1000);
     
         }
-        Console.Write("\b"); 
-        Console.WriteLine("Done"); 
+        int currentLineCursor = Console.CursorTop;
+        Console.SetCursorPosition(0, currentLineCursor);
+        Console.Write(new string(' ', Console.WindowWidth));
+        Console.SetCursorPosition(0, currentLineCursor);
     }
 
     public void AddSeconds() //((🦺))

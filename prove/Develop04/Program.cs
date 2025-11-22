@@ -35,12 +35,12 @@ class Program
             }
             else if (userinput == 2)
             {
-                Console.WriteLine("We'll put the breathing activity here"); //(((❌)))
+                Console.Clear();
+                Thread.Sleep(1000);
 
                 Console.WriteLine(breathingActivity.DisplayWelcome());
                 Console.WriteLine(breathingActivity.DisplayDescription());
-                int durration = breathingActivity.ObtainDurration();
-                breathingActivity.RunCountDown("hello", durration);
+                breathingActivity.RunBActivity();
             }
             else if(userinput == 3)
             {

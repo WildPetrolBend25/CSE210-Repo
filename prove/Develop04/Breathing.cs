@@ -1,4 +1,6 @@
 using System;
+using System.Data;
+using System.Runtime.InteropServices;
 
 class Breathing : Activity
 {
@@ -11,7 +13,16 @@ class Breathing : Activity
     //methods
     public void RunBActivity()
     {
-        //nothing here yet
+        Console.WriteLine("");
+        
+        int _durration = ObtainDurration();
+        Console.Write("Breath in:  ");
+        RunCountDown( _durration);
+
+        Console.Write("Breathe out:  ");
+        RunCountDown(_durration);
+
+        Console.WriteLine("Done");
     }
 
 }
