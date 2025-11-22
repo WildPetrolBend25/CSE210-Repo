@@ -64,46 +64,14 @@ class Activity
 
     public void RunCountDown(string message, int seconds) //((🦺))
     {
-        DateTime startTime = DateTime.Now;
-        _endTime = startTime.AddSeconds(seconds); 
-        DateTime currentTime = DateTime.Now;
-
-        Thread.Sleep(1000);
-        int[] _countDown =
+        for (int i = seconds; i > 0; i--)
         {
-            6, 5, 4, 3, 2, 1
-        };
-
-        bool done = false;
-        while (!done)
-        {
-            if (currentTime != _endTime)
-            {
-                foreach (int item in _countDown)
-                {
-                    if(item < _countDown.Count())
-                    {
-                        Thread.Sleep(1000);
-                        Console.Write("\b" + item);
-                    }
-                } 
-            }
-            else
-            {
-                done = true;
-            }
-            
-            // for (int i = 5; i > 0; i--)
-            // {
-            //     Console.Write("\b" + i);
-            //     Thread.Sleep(1000);
-            // }
-            // Console.Write("\b");
-            // Console.WriteLine("Done");
+            Console.Write("\b \b" + i);
+            Thread.Sleep(1000);
+    
         }
-        Console.Write("\b");
-        Console.WriteLine("Done");
-        
+        Console.Write("\b"); 
+        Console.WriteLine("Done"); 
     }
 
     public void AddSeconds() //((🦺))
