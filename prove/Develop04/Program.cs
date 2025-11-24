@@ -15,41 +15,24 @@ class Program
         myMenu.DisplayMenu(); //get the menu displayed
         int userinput = myMenu.GetUserInput(); //get the user's input
 
-        //make it look like code is loading
-        // myActivity.DisplaySpinner(); //((✅))
-        //test AddSeconds. What does it do?
-        //myActivity.AddSeconds(); //((✅))
-        //countdown annimation
-        //myActivity.RunCountDown(); //(((✅)))
-
-
         //move into other activites ((🟧🟧🟧))
+        Console.Clear();
+        Thread.Sleep(1000);
         if (userinput == 1)
             {
-                Console.WriteLine(myActivity.DisplayWelcome());
-                Console.WriteLine(myActivity.DisplayDescription());
-
-            }
-            else if (userinput == 2)
-            {
-                Console.Clear();
-                Thread.Sleep(1000);
-
-                // Console.WriteLine(breathingActivity.DisplayWelcome());
-                // Console.WriteLine(breathingActivity.DisplayDescription());
                 breathingActivity.StartActivityPart1();
                 breathingActivity.RunActivityLogicB();
                 breathingActivity.StartActivityPart2();
-
+            }
+            else if (userinput == 2)
+            {
+                Console.WriteLine("This is where reflections will go");
 
             }
             else if(userinput == 3)
             {
-                Console.WriteLine("This is where reflections will go");
-            }
-            else if (userinput == 4)
-            {
                 Console.WriteLine("this is where the list activity will go");
+                
             }
             else
             {
