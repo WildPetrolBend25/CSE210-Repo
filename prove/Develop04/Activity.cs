@@ -75,22 +75,22 @@ class Activity
         Console.SetCursorPosition(0, currentLineCursor);
     }
 
-    public void StartActivity()
+    public void StartActivityPart1()
     {
         // nothing here yet
         Console.Clear();
         Console.WriteLine(DisplayWelcome());
         Console.WriteLine(DisplayDescription() + "\n");
-
-        _duration = ObtainDurration();
-
         Console.Clear();
-        Console.WriteLine("Get ready...");
+        Console.WriteLine("Loading...");
         DisplaySpinner(3);
+ 
+    }
 
+    public void StartActivityPart2()
+    {
         Console.WriteLine("\nWell done!!\n");
         DisplaySpinner(3);
-        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
-        DisplaySpinner(4);
     }
+    
 }

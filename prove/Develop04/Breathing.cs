@@ -11,7 +11,7 @@ class Breathing : Activity
     }
 
     //methods
-    public void RunBActivity()
+    public void RunActivityLogicB()
     {
         int _duration = ObtainDurration();
         DateTime endTime = DateTime.Now.AddSeconds(_duration);
@@ -20,11 +20,9 @@ class Breathing : Activity
         {
             Console.Write("Breathe in... ");
             RunCountDown(4);
-            Console.WriteLine();
             
             Console.Write("Now breathe out... ");
             RunCountDown(6);
-            Console.WriteLine("\n");
         }
     }
 

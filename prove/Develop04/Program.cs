@@ -35,9 +35,13 @@ class Program
                 Console.Clear();
                 Thread.Sleep(1000);
 
-                Console.WriteLine(breathingActivity.DisplayWelcome());
-                Console.WriteLine(breathingActivity.DisplayDescription());
-                breathingActivity.RunBActivity();
+                // Console.WriteLine(breathingActivity.DisplayWelcome());
+                // Console.WriteLine(breathingActivity.DisplayDescription());
+                breathingActivity.StartActivityPart1();
+                breathingActivity.RunActivityLogicB();
+                breathingActivity.StartActivityPart2();
+
+
             }
             else if(userinput == 3)
             {
