@@ -19,6 +19,26 @@ class Listing : Activity
 
     public void RunActivityLogicL()
     {
-        //nothing here yet 
+        Random rand = new Random();
+        Console.WriteLine("List as many responses as you can to the following prompt:\n");
+        string prompt = _prompts[rand.Next(_prompts.Length)];
+        Console.WriteLine($" --- {prompt} --- ");
+        Console.Write("You may begin in: ");
+        RunCountDown(6);
+
+        List<string> items = new List<string>();
+        int _duration = ObtainDurration();
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+
+        Console.WriteLine();
+        while (DateTime.Now < endTime)
+        {
+            Console.Write("> ");
+            string item = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(item))
+                items.Add(item);
+        }
+
+        Console.WriteLine($"\nYou listed {items.Count} items!");
     }
 }
