@@ -6,9 +6,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        //test code
-        Console.WriteLine("Hello Develop04 World!\n");
-
         //Instances ((🟦🟦🟦))
         Activity myActivity = new Activity("Base", "This is the base activity");
         Menu myMenu = new Menu();
@@ -19,7 +16,7 @@ class Program
         int userinput = myMenu.GetUserInput(); //get the user's input
 
         //make it look like code is loading
-        //myActivity.DisplaySpinner(); //((✅))
+        // myActivity.DisplaySpinner(); //((✅))
         //test AddSeconds. What does it do?
         //myActivity.AddSeconds(); //((✅))
         //countdown annimation

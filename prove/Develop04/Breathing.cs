@@ -13,16 +13,19 @@ class Breathing : Activity
     //methods
     public void RunBActivity()
     {
-        Console.WriteLine("");
-        
-        int _durration = ObtainDurration();
-        Console.Write("Breath in:  ");
-        RunCountDown( _durration);
+        int _duration = ObtainDurration();
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
 
-        Console.Write("Breathe out:  ");
-        RunCountDown(_durration);
-
-        Console.WriteLine("Done");
+        while (DateTime.Now < endTime)
+        {
+            Console.Write("Breathe in... ");
+            RunCountDown(4);
+            Console.WriteLine();
+            
+            Console.Write("Now breathe out... ");
+            RunCountDown(6);
+            Console.WriteLine("\n");
+        }
     }
 
 }

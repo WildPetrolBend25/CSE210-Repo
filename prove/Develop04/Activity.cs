@@ -6,7 +6,7 @@ class Activity
     private string _name;
     private string _description;
     private int _duration;
-    DateTime _endTime;
+    private DateTime _endTime;
 
     //constructors ((🟩🟩🟩))
     public Activity(string name, string description)
@@ -14,7 +14,6 @@ class Activity
         _name = name;
         _description = description;
         _duration = 0;
-        _endTime = DateTime.Now;
     }
 
    
@@ -29,19 +28,28 @@ class Activity
         return $"{_description}";
     }
 
-    public void DisplaySpinner(string message, int seconds) //((🦺))
+    public int ObtainDurration() //((✅))
+    {
+        Console.Write("How many seconds would you like to this activity for? ");
+        string input = Console.ReadLine();
+        int seconds = int.Parse(input);
+        return seconds;
+    }
+
+    public void DisplaySpinner(int seconds = 3) 
     {
         char[] frames = { '/', '-', '\\', '|' };
-        _duration = 5;
+        DateTime end = DateTime.Now.AddSeconds(seconds);
 
-        Console.Write("Loading ");
-
-        for (int i = 0; i < 5; i++)
+        while (DateTime.Now < end)
         {
-            foreach (char item in frames)
+            for (int i = 0; i < 5; i++)
             {
-                Console.Write("\b" + item);
-                Thread.Sleep(250);
+                foreach (char item in frames)
+                {
+                    Console.Write("\b" + item);
+                    Thread.Sleep(250);
+                }
             }
         }
         Console.Write("\b ");  // Final cleanup: erase the spinner
@@ -53,22 +61,13 @@ class Activity
         Console.SetCursorPosition(0, currentLineCursor);
     } 
 
-    public int ObtainDurration() //((✅))
-    {
-        Console.Write("How many seconds would you like to this activity for? ");
-        string input = Console.ReadLine();
-        int seconds = int.Parse(input);
-        return seconds;
-    }
 
-
-    public void RunCountDown(int seconds) //((✅))
+    public void RunCountDown(int startFrom = 5) //((✅))
     {
-        for (int i = seconds; i > 0; i--)
+        for (int i = startFrom; i > 0; i--)
         {
             Console.Write("\b \b" + i);
             Thread.Sleep(1000);
-    
         }
         int currentLineCursor = Console.CursorTop;
         Console.SetCursorPosition(0, currentLineCursor);
@@ -76,21 +75,22 @@ class Activity
         Console.SetCursorPosition(0, currentLineCursor);
     }
 
-    public void AddSeconds() //((🦺))
-    { 
-        DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5);
+    public void StartActivity()
+    {
+        // nothing here yet
+        Console.Clear();
+        Console.WriteLine(DisplayWelcome());
+        Console.WriteLine(DisplayDescription() + "\n");
 
-        Thread.Sleep(3000);
+        _duration = ObtainDurration();
 
-        DateTime currentTime = DateTime.Now;
-        if (currentTime < futureTime)
-        {
-            Console.WriteLine("We have not arrived at our future time yet...");
-        }
-        else
-        {
-            Console.WriteLine("We are at a future time now");
-        }
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        DisplaySpinner(3);
+
+        Console.WriteLine("\nWell done!!\n");
+        DisplaySpinner(3);
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name}.");
+        DisplaySpinner(4);
     }
 }
