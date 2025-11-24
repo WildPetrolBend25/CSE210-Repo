@@ -31,6 +31,27 @@ class Reflection: Activity
     //methods 
     public void RunActivityLogicR()
     {
-        // nothing here folks
+        Random rand = new Random();
+        Console.WriteLine("Consider the following prompt:\n");
+        string prompt = _prompts[rand.Next(_prompts.Length)];
+        Console.WriteLine($" --- {prompt} --- ");
+        Console.WriteLine("\nWhen you have something in mind, press enter to continue.");
+        Console.ReadLine();
+
+        Console.Clear();
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        Console.Write("You may begin in: ");
+        RunCountDown(8);
+
+
+        Console.WriteLine("\nLoading...\n");
+
+        DateTime endTime = DateTime.Now.AddSeconds(60); 
+        while (DateTime.Now < endTime)
+        {
+            string q = _questions[rand.Next(_questions.Length)];
+            Console.Write($"> {q} ");
+            DisplaySpinner(10);
+        }
     }
 }
