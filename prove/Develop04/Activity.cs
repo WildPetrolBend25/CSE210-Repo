@@ -89,7 +89,7 @@ class Activity
 
     public void StartActivityPart2()
     {
-        Console.WriteLine("\nWell done!!\n");
+        Console.WriteLine("Well done!!");
         DisplaySpinner(3);
     }
     
