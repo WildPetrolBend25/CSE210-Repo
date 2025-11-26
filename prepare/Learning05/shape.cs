@@ -12,7 +12,7 @@ class Shape
     }
 
     //methods
-    public string GetShape()
+    public string GetColor()
     {
         return _color;
     }

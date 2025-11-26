@@ -4,6 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning05 World!");
+        //instances
+        Shape myShape = new Shape();
+
+        //nethod calling
+        myShape.SetColor("Blue");
+        string obtainedColor = myShape.GetColor();
+        Console.WriteLine($"The color is: {obtainedColor}");
     }
 }
