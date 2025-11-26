@@ -41,7 +41,6 @@ class Program
                 listingActivity.StartActivityPart1();
                 listingActivity.RunActivityLogicL();
                 listingActivity.StartActivityPart2();
-                
             }
             else
             {

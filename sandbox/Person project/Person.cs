@@ -1,5 +1,5 @@
 
-class Person
+public abstract class Person
 {
     //attributes
     private string _firstName;
@@ -17,7 +17,7 @@ class Person
     }
 
     //display perosnal info
-    public string GetPersonalInformation()
+    public virtual string GetPersonalInformation()
     {
         string PerInfo = $"Person: {_firstName}, {_lastName}, Age:{_age}, weight:{_weight}";
         return PerInfo;
@@ -36,6 +36,8 @@ class Person
             _age = age;
         }
     }
+
+    public abstract double GetSalary();
 
 
     

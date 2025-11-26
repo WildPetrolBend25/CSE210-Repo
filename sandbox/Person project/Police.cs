@@ -17,4 +17,15 @@ class Police : Person
         //don't need base, but you can have base.getpersonalinformation
         return $"Policeman: {base.GetPersonalInformation()}, Weapons: {_weapons}";
     }
+
+    public override string GetPersonalInformation()
+    {
+        //don't need base, but you can have base.getpersonalinformation
+        return $"Policeman: {base.GetPersonalInformation()}, Weapons: {_weapons}";
+    }
+
+    public override double GetSalary()
+    {
+        return 50000.02;
+    }
 }

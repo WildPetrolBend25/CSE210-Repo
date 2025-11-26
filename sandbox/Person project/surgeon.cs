@@ -15,4 +15,14 @@ class Surgeon : Doctor
     {
         return $"Surgeon: {base.GetPersonalInformation()} {_title}";
     }
+
+    public override string GetPersonalInformation()
+    {
+        return $"Surgeon: {base.GetPersonalInformation()} {_title}";
+    }
+
+    public override double GetSalary()
+    {
+        return 1000000.45;
+    }
 }
