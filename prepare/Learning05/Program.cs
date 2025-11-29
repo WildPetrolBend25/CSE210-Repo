@@ -6,10 +6,14 @@ class Program
     {
         //instances
         Shape myShape = new Shape("blue");
+        Square mySquare = new Square("Green", 7.6);
 
-        //nethod calling
+        //method calling
+        //Base shape
         myShape.SetColor("Blue");
-        string obtainedColor = myShape.GetColor();
-        Console.WriteLine($"The color is: {obtainedColor}");
+        Console.WriteLine($"The base shape's color is: {myShape.GetColor()}");
+
+        //Square
+        Console.WriteLine($"\nThe {mySquare.GetColor()} square has an area of: {mySquare.GetArea()} inches.");
     }
 }
