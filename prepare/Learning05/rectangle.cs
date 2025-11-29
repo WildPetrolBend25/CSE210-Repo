@@ -12,7 +12,7 @@ class Rectangle : Shape
     }
 
     //metods
-    public double GetArea()
+    public override double GetArea()
     {
         double _area = 0.0;
         return _area;

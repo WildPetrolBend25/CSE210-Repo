@@ -22,7 +22,7 @@ class Shape
         _color = color;
     }
 
-    public double GetArea()
+    public virtual double GetArea()
     {
         //area calculations
         double _area = 0.0;
