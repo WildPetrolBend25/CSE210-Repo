@@ -22,13 +22,15 @@ class Shape
         _color = color;
     }
 
-    public void GetArea()
+    public double GetArea()
     {
         //area calculations
+        double _area = 0.0;
+        return _area;
     }
 
     //testing purposes 
-    public void DisplayColor()
+    public void DisplayColor() //(((❌)))
     {
         Console.WriteLine(_color);
     }
