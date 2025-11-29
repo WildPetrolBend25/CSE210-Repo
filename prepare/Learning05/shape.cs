@@ -6,9 +6,9 @@ class Shape
     private string _color;
 
     //constructors
-    public Shape()
+    public Shape(string color)
     {
-
+        _color = color;
     }
 
     //methods

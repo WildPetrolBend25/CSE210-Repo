@@ -4,6 +4,10 @@ class Circle : Shape
     private double _radius;
 
     //constructors
+    public Circle(string color, double radius) : base(color)
+    {
+        _radius = radius;
+    }
 
     //metods
     public double GetArea()

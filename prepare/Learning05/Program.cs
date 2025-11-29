@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         //instances
-        Shape myShape = new Shape();
+        Shape myShape = new Shape("blue");
 
         //nethod calling
         myShape.SetColor("Blue");
