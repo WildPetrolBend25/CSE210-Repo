@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 
 class Program
 {
@@ -24,5 +25,17 @@ class Program
 
         //Circle
         Console.WriteLine($"\nThe area of the {myCircle.GetColor()} circle is: {myCircle.GetArea():0.00}");
+
+        //list of shapes
+        List<Shape> shapes = new List<Shape>();
+        shapes.Add(mySquare);
+        shapes.Add(myRectangle);
+        shapes.Add(myCircle);
+
+        Console.WriteLine("\n");
+        foreach (Shape item in shapes)
+        {
+            Console.WriteLine($"The area of the {item.GetColor()} shape is: {item.GetArea():0.00} inches.");
+        }
     }
 }
