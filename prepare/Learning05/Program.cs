@@ -6,11 +6,11 @@ class Program
     static void Main(string[] args)
     {
         //instances
-        Shape myShape = new Shape("blue");
+        Shape myShape = new Shape("shape", "blue");
 
-        Square mySquare = new Square("Green", 7.6);
-        Rectangle myRectangle = new Rectangle("Black", 7.8, 4.2);
-        Circle myCircle = new Circle("Blue", 2.3);
+        Square mySquare = new Square("Square", "Green", 7.6);
+        Rectangle myRectangle = new Rectangle("Rectangle", "Black", 7.8, 4.2);
+        Circle myCircle = new Circle("Circle", "Blue", 2.3);
 
         //method calling
         //Base shape
@@ -35,7 +35,7 @@ class Program
         Console.WriteLine("\n");
         foreach (Shape item in shapes)
         {
-            Console.WriteLine($"The area of the {item.GetColor()} shape is: {item.GetArea():0.00} inches.");
+            Console.WriteLine($"The area of the {item.GetColor()} {item.GetName()} is: {item.GetArea():0.00} inches.");
         }
     }
 }

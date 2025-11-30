@@ -6,7 +6,7 @@ class Square : Shape
     private double _side;
 
     //constructors
-    public Square(string color, double side) : base(color)
+    public Square(string name, string color, double side) : base(name, color)
     {
         _side = side;
     }

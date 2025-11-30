@@ -4,7 +4,7 @@ class Circle : Shape
     private double _radius;
 
     //constructors
-    public Circle(string color, double radius) : base(color)
+    public Circle(string name, string color, double radius) : base(name, color)
     {
         _radius = radius;
     }

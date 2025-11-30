@@ -5,7 +5,7 @@ class Rectangle : Shape
     private double _width;
 
     //constructors
-    public Rectangle(string color, double length, double width) : base(color)
+    public Rectangle(string name, string color, double length, double width) : base(name, color)
     {
         _length = length;
         _width = width;
