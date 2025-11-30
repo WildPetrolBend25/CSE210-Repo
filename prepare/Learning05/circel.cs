@@ -10,9 +10,9 @@ class Circle : Shape
     }
 
     //metods
-    public double GetArea()
+    public override double GetArea()
     {
-        double _area = 0.0;
+        double _area = Math.PI * (_radius * _radius);
         return _area;
     }
 }
