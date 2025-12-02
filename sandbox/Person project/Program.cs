@@ -10,7 +10,6 @@ class Program
         Console.WriteLine($" ${person.GetSalary()}");
     }
 
-
     static void Main(string[] args)
     {
         //print info from person class
