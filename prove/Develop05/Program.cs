@@ -6,19 +6,19 @@ class Program
     {
         Console.WriteLine("Hello Develop05 World!");
 
-        //instances
+        //instances 🟩
         Menu myMenu = new Menu();
+        Goal myGoal = new Goal("Run", "Run a lot faster");
 
-        //constrcutors
-
-        //method calling 
+        //method calling 🟩
+        //display the menu
         int userinput = myMenu.DisplayMenu();
 
-        //go into different activites
+        //go into different activites 
         if (userinput == 1)
         {
             Console.WriteLine("\n");
-            Console.WriteLine("Yay, it works");
+            Console.WriteLine(myGoal.GetConsoleString());
         }
     }
 }
