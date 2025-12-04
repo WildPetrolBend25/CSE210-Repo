@@ -20,6 +20,22 @@ class Goals
     //constructors
 
     //methods
+    public void goals()
+    {
+        //notjing here yet (((🦺)))
+    }
+    public void AddGoal()
+    {
+        //nothing here yet (((🦺)))
+    }
+    public void LoadGoals()
+    {
+        ///nothing here yet (((🦺)))
+    }
+    public void SaveGoals()
+    {
+        //nothing here yet (((🦺)))
+    }
     public void DisplayGoals()
     {
         foreach (string item in ListofGoals)
@@ -61,6 +77,11 @@ class Goals
 
     public void DisplayScore()
     {
-        Console.WriteLine(_totalScore);
+        Console.WriteLine(_totalScore); //(((🦺)))
     }
+    public void RecordEvent()
+    {
+        //nothing here yet (((🦺)))
+    }
+    
 }

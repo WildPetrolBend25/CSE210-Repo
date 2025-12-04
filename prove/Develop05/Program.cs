@@ -22,7 +22,7 @@ class Program
             {
                 //simple goal
                 Console.Clear();
-                Console.WriteLine("This will be the simple go");
+                Console.WriteLine("This will be the simple goal will go");
             }
             else if(userGoalsInput == 2)
             {
