@@ -2,10 +2,10 @@ using System;
 using System.ComponentModel;
 using System.Security.Cryptography.X509Certificates;
 
-class Goals
+class GoalManager
 {
     //attributes
-    private List<string> ListofGoals = new List<string>
+    private List<string> goalTypes = new List<string>
     {
         "The Type of Goals are:",
         "1. Simple Goal",
@@ -16,17 +16,30 @@ class Goals
     private int _totalScore;
     private bool done = false;
     private int userInput;
+    private List <Goal> _goals = new List<Goal>();
 
     //constructors
-
+        
     //methods
-    public void goals()
+    public void ListGoals()  
     {
-        //notjing here yet (((🦺)))
+        if (_goals.Count == 0)
+        {
+            Console.WriteLine("No goals have been created yet.\n");
+            return;
+        }
+
+        Console.WriteLine("Your goals are:");
+        for (int i = 0; i < _goals.Count; i++)
+        {
+            Console.WriteLine($"{i + 1}. {_goals[i].GetConsoleString()}");
+        }
+        Console.WriteLine();
     }
-    public void AddGoal()
+    public void AddGoal(Goal goal)
     {
         //nothing here yet (((🦺)))
+        _goals.Add(goal);
     }
     public void LoadGoals()
     {
@@ -38,7 +51,7 @@ class Goals
     }
     public void DisplayGoals()
     {
-        foreach (string item in ListofGoals)
+        foreach (string item in goalTypes)
         {
             Console.WriteLine(item);
         }
@@ -46,7 +59,6 @@ class Goals
 
     public int ObtainUserInput()
     {
-       bool done = false;
        while (!done)
         {
             Console.Write("Which type of Goal would you like to create ");
@@ -72,7 +84,10 @@ class Goals
                 Thread.Sleep(2000);
             }
         } 
-        return userInput;
+        int choice = userInput;  
+        done = false;            
+        userInput = 0;          
+        return choice;
     }
 
     public void DisplayScore()
@@ -83,5 +98,5 @@ class Goals
     {
         //nothing here yet (((🦺)))
     }
-    
+
 }

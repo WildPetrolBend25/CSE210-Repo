@@ -58,7 +58,10 @@ class Menu
                 Thread.Sleep(2000);
             }
         }
-        return userInput;
+        int choice = userInput;  
+        done = false;           
+        userInput = 0;         
+        return choice;
     }
     
 }

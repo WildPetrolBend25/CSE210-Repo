@@ -17,4 +17,5 @@ class Simple : Goal
         return base.GetConsoleString();
     }
 
+
 }

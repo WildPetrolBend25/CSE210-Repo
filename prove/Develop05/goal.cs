@@ -14,7 +14,7 @@ class Goal
     {
         _name = name;
         _description = description;
-        _numberOfPoint = 0;
+        _numberOfPoint = points;
         _status = false;
         _goalType = "";
     }

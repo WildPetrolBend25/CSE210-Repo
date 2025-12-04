@@ -1,77 +1,96 @@
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 class Program
 {
     static void Main(string[] args)
     {
+        //attributes 
+        string _name;
+        string _description;
+        int _points;
+        bool status = false;
+        
         //instances 🟩
         Menu myMenu = new Menu();
-        Goal myGoal = new Goal("Run", "Run a lot faster", 0);
-        Goals myGoals = new Goals();
-       
+        GoalManager myGoals = new GoalManager();
+        Simple mySimpleGoal;
 
         //method calling 🟩
-        int userinput = myMenu.DisplayMenu();  //display the menu
 
         //go into different activites 🟩
-        if (userinput == 1) //create goal
+        while (!status)
         {
-            myGoals.DisplayGoals();
-            int userGoalsInput = myGoals.ObtainUserInput();
-            if (userGoalsInput == 1)
+            int userinput = myMenu.DisplayMenu();  //display the menu
+
+            Console.WriteLine("Resets back to here");
+        
+            if (userinput == 1) //create goal
             {
-                //simple goal
-                Console.WriteLine("This will be the simple goal will go\n");
+                myGoals.DisplayGoals();
+                int userGoalsInput = myGoals.ObtainUserInput();
+                if (userGoalsInput == 1)
+                {
+                    //simple goal
+                    //Console.Clear(); //(((🦺)))
 
-                Console.Write("what is the name of the Goal ");
-                string _name = Console.ReadLine();
+                    Console.WriteLine("This will be the simple goal will go\n");
 
-                Console.Write("what is a short description of it? ");
-                string _description = Console.ReadLine();
+                    Console.Write("what is the name of the Goal ");
+                    _name = Console.ReadLine();
 
-                Console.Write("what is the ammount of points associated with this goal? ");
-                string inputPoints = Console.ReadLine();
-                int _points = int.Parse(inputPoints);
+                    Console.Write("what is a short description of it? ");
+                    _description = Console.ReadLine();
 
-                Simple mySimpleGoal = new Simple(_name, _description, _points);
-                Console.WriteLine(mySimpleGoal.GetConsoleString());
+                    Console.Write("what is the ammount of points associated with this goal? ");
+                    string inputPoints = Console.ReadLine();
+                    _points = int.Parse(inputPoints);
 
+                    mySimpleGoal = new Simple(_name, _description, _points);
+                    
+                    myGoals.AddGoal(mySimpleGoal); 
+                    Console.WriteLine("Goal added successfully!");
+                    Console.Clear();
+                    
+                }
+                else if(userGoalsInput == 2)
+                {
+                    //eternal goals
+                    Console.Clear();
+                    Console.WriteLine("This is where the eternal goals wiil go");
+                    
+                }
+                else
+                {
+                    //checklist goals
+                    Console.Clear();
+                    Console.WriteLine("This is where the checklist goal will go");
+                }
 
             }
-            else if(userGoalsInput == 2)
+            else if (userinput == 2) //list goals
             {
-                //eternal goals
                 Console.Clear();
-                Console.WriteLine("This is where the eternal goals wiil go");
+                myGoals.ListGoals();
             }
-            else
+            else if (userinput == 3) //save goals
             {
-                //checklist goals
-                Console.Clear();
-                Console.WriteLine("This is where the checklist goal will go");
+                
             }
-
-        }
-        else if (userinput == 2) //list goals
-        {
-            
-        }
-        else if (userinput == 3) //save goals
-        {
-            
-        }
-        else if (userinput == 4) //load goals
-        {
-            
-        }
-        else if (userinput == 5) //record event
-        {
-            
-        }
-        else //exit the program
-        {
-            Console.WriteLine("You've exited the program");
+            else if (userinput == 4) //load goals
+            {
+                
+            }
+            else if (userinput == 5) //record event
+            {
+                
+            }
+            else //exit the program
+            {
+                status = true;
+                Console.WriteLine("You've exited the program");
+            }
         }
     }
 }
