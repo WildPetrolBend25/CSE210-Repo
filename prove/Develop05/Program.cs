@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 class Program
 {
@@ -16,8 +17,28 @@ class Program
         if (userinput == 1) //create goal
         {
             myGoals.DisplayGoals();
-            Console.WriteLine("\n");
-            Console.WriteLine(myGoal.GetConsoleString());
+            int userGoalsInput = myGoals.ObtainUserInput();
+            if (userGoalsInput == 1)
+            {
+                //simple goal
+                Console.Clear();
+                Console.WriteLine("This will be the simple go");
+            }
+            else if(userGoalsInput == 2)
+            {
+                //eternal goals
+                Console.Clear();
+                Console.WriteLine("This is where the eternal goals wiil go");
+            }
+            else
+            {
+                //checklist goals
+                Console.Clear();
+                Console.WriteLine("This is where the checklist goal will go");
+            }
+            // Console.WriteLine("\n");
+            // Console.WriteLine(myGoal.GetConsoleString());
+
         }
         else if (userinput == 2) //list goals
         {
