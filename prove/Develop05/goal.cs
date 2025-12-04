@@ -10,7 +10,7 @@ class Goal
     private string _goalType;
 
     //constructors
-    public Goal(string name, string description)
+    public Goal(string name, string description, int points)
     {
         _name = name;
         _description = description;
