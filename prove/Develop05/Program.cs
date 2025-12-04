@@ -23,8 +23,6 @@ class Program
         while (!status)
         {
             int userinput = myMenu.DisplayMenu();  //display the menu
-
-            Console.WriteLine("Resets back to here");
         
             if (userinput == 1) //create goal
             {
@@ -33,9 +31,9 @@ class Program
                 if (userGoalsInput == 1)
                 {
                     //simple goal
-                    //Console.Clear(); //(((🦺)))
+                    Console.Clear(); 
 
-                    Console.WriteLine("This will be the simple goal will go\n");
+                    Console.WriteLine("Welcome to the simple Goal\n");
 
                     Console.Write("what is the name of the Goal ");
                     _name = Console.ReadLine();
@@ -71,8 +69,9 @@ class Program
             }
             else if (userinput == 2) //list goals
             {
-                Console.Clear();
+                Console.WriteLine("In option 2");
                 myGoals.ListGoals();
+                Console.Clear();
             }
             else if (userinput == 3) //save goals
             {
@@ -89,6 +88,7 @@ class Program
             else //exit the program
             {
                 status = true;
+                Console.Clear();
                 Console.WriteLine("You've exited the program");
             }
         }

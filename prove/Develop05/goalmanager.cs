@@ -35,6 +35,8 @@ class GoalManager
             Console.WriteLine($"{i + 1}. {_goals[i].GetConsoleString()}");
         }
         Console.WriteLine();
+        Console.Write("Press Enter when you want to continue "); //When you press enter the code continues
+        Console.ReadLine();
     }
     public void AddGoal(Goal goal)
     {
