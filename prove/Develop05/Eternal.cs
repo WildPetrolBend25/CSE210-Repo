@@ -15,6 +15,6 @@ class Eternal : Goal
     }
     public override string GetStringRepresentation()
     {
-        return $"[ ] {name} ({description})";  // Always [ ] — never done!
+        return base.GetStringRepresentation();
     }
 }
