@@ -40,7 +40,6 @@ class GoalManager
     }
     public void AddGoal(Goal goal)
     {
-        //nothing here yet (((🦺)))
         _goals.Add(goal);
     }
     public void LoadGoals()
@@ -94,11 +93,37 @@ class GoalManager
 
     public void DisplayScore()
     {
-        Console.WriteLine(_totalScore); //(((🦺)))
+        Console.WriteLine($"You have {_totalScore} points!\n");
     }
     public void RecordEvent()
     {
-        //nothing here yet (((🦺)))
+        {
+            if (_goals.Count == 0)
+            {
+                Console.WriteLine("You have no goals to record. Create some first!\n");
+                Console.ReadLine();
+                return;
+            }
+
+            ListGoals();  // Shows numbered list
+
+            Console.Write("Which goal did you accomplish? (enter number) ");
+            if (!int.TryParse(Console.ReadLine(), out int choice) || choice < 1 || choice > _goals.Count)
+            {
+                Console.WriteLine("Invalid number!");
+                Thread.Sleep(1500);
+                return;
+            }
+
+            int pointsEarned = _goals[choice - 1].RecordEvent();
+            _totalScore += pointsEarned;
+
+            Console.WriteLine($"\nCongratulations! You earned {pointsEarned} points!");
+            Console.WriteLine($"You now have {_totalScore} total points!\n");
+            Console.WriteLine("Press Enter to continue...");
+            Console.ReadLine();
+            Console.Clear();
+        }
     }
 
 }
