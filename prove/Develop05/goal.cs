@@ -10,18 +10,40 @@ class Goal
     private string _goalType;
 
     //constructors
-    public Goal(string name, string description, int points)
+    public Goal(string name, string description, int points, bool status)
     {
         _name = name;
         _description = description;
         _numberOfPoint = points;
-        _status = false;
+        _status = status;
         _goalType = "";
     }
 
     //methods
-    public virtual string GetConsoleString()
+    protected bool IsCompleted // replaces _status
+        {
+            get { return _status; }
+            set { _status = value; }
+        }
+    protected int Points // replaces _numberOfPoint
+        {
+            get { return _numberOfPoint; }
+            set { _numberOfPoint = value; }
+        }
+   
+    public virtual string GetStringRepresentation()
     {
-        return $"Name: {_name}, Description: {_description}, Points: {_numberOfPoint}";
+        if (_status == false)
+        {
+            return $"[ ] {_name}, {_description}";
+        }
+        else
+        {
+            return $"[X] {_name}, {_description}";
+        }
+    }
+    public virtual int RecordEvent()
+    {
+        return 0;  // base does nothing — will be overridden
     }
 }

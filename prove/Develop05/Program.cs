@@ -45,7 +45,7 @@ class Program
                     string inputPoints = Console.ReadLine();
                     _points = int.Parse(inputPoints);
 
-                    mySimpleGoal = new Simple(_name, _description, _points);
+                    mySimpleGoal = new Simple(_name, _description, _points, status);
                     
                     myGoals.AddGoal(mySimpleGoal); 
                     Console.WriteLine("Goal added successfully!");
@@ -69,7 +69,6 @@ class Program
             }
             else if (userinput == 2) //list goals
             {
-                Console.WriteLine("In option 2");
                 myGoals.ListGoals();
                 Console.Clear();
             }

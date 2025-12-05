@@ -32,7 +32,7 @@ class GoalManager
         Console.WriteLine("Your goals are:");
         for (int i = 0; i < _goals.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {_goals[i].GetConsoleString()}");
+            Console.WriteLine($"{i + 1}. {_goals[i].GetStringRepresentation()}");
         }
         Console.WriteLine();
         Console.Write("Press Enter when you want to continue "); //When you press enter the code continues
