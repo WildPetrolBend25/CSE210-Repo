@@ -6,7 +6,7 @@ class Eternal : Goal
     //constrcutors
     public Eternal(string name, string description, int points, bool status) : base(name, description, points, status)
     {
-        
+        GoalType = "Eternal";
     }
     //methods
     public override int RecordEvent()
@@ -16,5 +16,9 @@ class Eternal : Goal
     public override string GetStringRepresentation()
     {
         return base.GetStringRepresentation();
+    }
+    public override string GetStringRepresentationForSaving()
+    {
+        return base.GetStringRepresentationForSaving();
     }
 }

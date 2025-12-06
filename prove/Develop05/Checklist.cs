@@ -13,6 +13,7 @@ class Checklist : Goal
         _target = target;
         _current = 0;
         _bonus = bonus;
+        GoalType = "Checklist";
     }
 
     //methods
@@ -30,5 +31,14 @@ class Checklist : Goal
     public override string GetStringRepresentation()
     {
         return base.GetStringRepresentation();
+    }
+    public override string GetStringRepresentationForSaving()
+    {
+        return base.GetStringRepresentationForSaving();
+    }
+    protected int CurrentCount
+    {
+        get { return _current; }
+        set { _current = value; }
     }
 }

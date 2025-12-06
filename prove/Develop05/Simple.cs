@@ -8,7 +8,7 @@ class Simple : Goal
     //constructors
     public Simple(string name, string description, int points, bool status) : base(name, description, points, status)
     {
-        
+        GoalType = "Simple";
     }
 
     //methods 
@@ -16,6 +16,10 @@ class Simple : Goal
     public override string GetStringRepresentation()
     {
         return base.GetStringRepresentation();
+    }
+    public override string GetStringRepresentationForSaving()
+    {
+        return base.GetStringRepresentationForSaving();
     }
 
     public override int RecordEvent()

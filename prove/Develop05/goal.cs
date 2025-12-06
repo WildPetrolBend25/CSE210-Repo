@@ -16,7 +16,8 @@ class Goal
         _description = description;
         _numberOfPoint = points;
         _status = status;
-        _goalType = "";
+        _goalType = "Goal";
+
     }
 
     //methods
@@ -30,6 +31,11 @@ class Goal
             get { return _numberOfPoint; }
             set { _numberOfPoint = value; }
         }
+        protected string GoalType // new property for goal type
+        {
+            get { return _goalType; }
+            set { _goalType = value; }
+        }
    
     public virtual string GetStringRepresentation()
     {
@@ -42,6 +48,12 @@ class Goal
             return $"[X] {_name}, {_description}";
         }
     }
+    public virtual string GetStringRepresentationForSaving()
+        {
+            // The format should be: Type:Name,Description,Points,Status
+            // Status is '1' for complete, '0' for not.
+            return $"{GoalType}: {_name},{_description},{_numberOfPoint},{(_status ? "1" : "0")}";
+        }
     public virtual int RecordEvent()
     {
         return 0;  // base does nothing — will be overridden
