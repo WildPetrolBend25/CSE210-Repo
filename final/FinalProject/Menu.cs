@@ -15,7 +15,7 @@ class Menu
         
     }
     // methods
-    public List<string> GetMenu()
+    public List<string> GetMenu() //Step 5: return the _menuOptions attribute so that DisplayMenu can print it -> Program class
     {
         return _menuOptions;
     }

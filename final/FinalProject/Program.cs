@@ -11,13 +11,12 @@ class Program
 
 
         // instances
-        CharacterManager myManager = new CharacterManager();
+        CharacterManager myManager = new CharacterManager(); //Step 1 Initializes The Character Manager Class
         
 
         // menthods
-        myManager.DisplayMenu();
-        myManager.DisplaySentence();
-        //myManager.DisplayKanji(); (((Take a little break 🦺)))
+        myManager.DisplayMenu(); /*Step 2: within the chracter manager class, call the Display Menu method -> CharacterManager class */
+        myManager.DisplaySentence(); //Step 6: Call the DisplaySentence Class in the ChracterManager -> ChracterManager class
 
 
     }

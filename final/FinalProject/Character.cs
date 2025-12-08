@@ -6,7 +6,8 @@ class Character
     private bool _status = false;
     
     //constructors
-     public Character(string sentence, bool status)
+     public Character(string sentence, bool status) /*Step 9: Items passed in from ChracterManager's "myCharacter" 
+    instance are passed in -> ChracterManager class */
     {
         _sentence = sentence;
         _status = status;
@@ -17,11 +18,12 @@ class Character
         return $"{_sentence}";
     }
 
-    public string[] SentenceToArray()
+    public string[] SentenceToArray() /*Step 12: returns the sentence that was passed in in step 9 
+    into an Array -> ChracterManager:DisplaySentence method */
     {
         string[] words = _sentence.Split(" ");
         return words;
-        //foreach(string word)
+        
     }
 
 }
