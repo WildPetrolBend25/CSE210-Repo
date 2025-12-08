@@ -7,7 +7,7 @@ class CharacterManager
 
     // instances
     Menu mymenu = new Menu();
-    Kanji myKanji = new Kanji("Sentence", false, "kanji"); //(((🧰))) stack overflow error
+    Kanji myKanji = new Kanji("Sentence", false, "kanji"); 
 
     // constructors
     public CharacterManager()
@@ -25,9 +25,9 @@ class CharacterManager
         }
     }
 
-    public void DisplayKanji() //(((🧰))) fix
+    public void DisplayKanji() 
     {
-        myKanji.DisplaySentence();
+        Console.WriteLine(myKanji.DisplaySentence());
     }
 
 }

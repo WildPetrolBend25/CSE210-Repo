@@ -2,16 +2,16 @@ using System;
 class Kanji : Character
 {
     // attributes
-    string _kanji = "";
+    private string _kanji = "";
     // constructors
-    public Kanji(string sentence, bool status, string Kanji) : base(sentence, status)
+    public Kanji(string sentence, bool status, string kanji) : base(sentence, status)
     {
-        _kanji = Kanji;
+        _kanji = kanji;
     }
 
     // Methods 
     public override string DisplaySentence()
     {
-        return base.DisplaySentence();
+        return $"My Kanji is: {base.DisplaySentence()} + {_kanji}";
     }
 }
