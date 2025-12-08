@@ -18,13 +18,10 @@ class Character
         return $"{_sentence}";
     }
 
-
     public string[] SentenceToArray() /*Step 12: returns the sentence that was passed in in step 9 
     into an Array -> ChracterManager:DisplaySentence method */
     {
-        string[] words = _sentence.Split(" ");
-        return words;
-        
+        return _sentence.Select(c => c.ToString()).ToArray(); //turns all the elements of the string into chracters
     }
 
 }

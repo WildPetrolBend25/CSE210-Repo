@@ -8,17 +8,23 @@ class Kanji : Character
     // constructors
     public Kanji(string sentence, bool status) : base(sentence, status)
     {
+        //Completion Status: (((✅)))
         // This finds your project folder automatically when running from bin/Debug/net8.0
         string projectDirectory = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
         string filename = Path.Combine(projectDirectory, "kanji_string.txt");
-        string[] lines = System.IO.File.ReadAllLines(filename);
-        KanjiArray = lines; //make attribute gloabal
+        string allKanjis = File.ReadAllText(filename).Trim(); //Reads whole file as one string
+        KanjiArray = allKanjis.Select(c => c.ToString()).ToArray(); //splits the string of kanji's into just onle ine characters
     }
 
     // Methods 
     public override string GetSentence()
     {
         return base.GetSentence();
+    }
+
+    public string[] GetKanjiArray()
+    {
+        return KanjiArray;
     }
 
    public void DisplayKanjiList()

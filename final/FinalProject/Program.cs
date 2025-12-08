@@ -12,10 +12,8 @@ class Program
 
         // attributes 
 
-
         // instances
         CharacterManager myManager = new CharacterManager(); //Step 1 Initializes The Character Manager Class
-        
 
         // menthods
         myManager.DisplayMenu(); /*Step 2: within the chracter manager class, call the Display Menu method -> CharacterManager class */
