@@ -3,25 +3,19 @@ using System.Reflection;
 class CharacterManager
 {
     //attributes
-    private string _sentence = "";
-    private bool _status = false;
+   
 
     // instances
     Menu mymenu = new Menu();
-    //Kanji myKanji = new Kanji("Sentence", false, "kanji"); (((🧰))) stack overflow error
+    Kanji myKanji = new Kanji("Sentence", false, "kanji"); //(((🧰))) stack overflow error
 
     // constructors
-    public CharacterManager(string sentence, bool status)
+    public CharacterManager()
     {
-        _sentence = sentence;
-        _status = status;
+        
     }
 
     // methods
-    public virtual string DisplaySentence()
-    {
-        return $"{_sentence}";
-    }
     public void DisplayMenu()
     {
         List<string> _menuOptions = mymenu.GetMenu();
@@ -31,9 +25,9 @@ class CharacterManager
         }
     }
 
-    // public void DisplayKanji() (((🧰))) fix
-    // {
-    //     myKanji.DisplaySentence();
-    // }
+    public void DisplayKanji() //(((🧰))) fix
+    {
+        myKanji.DisplaySentence();
+    }
 
 }

@@ -11,11 +11,14 @@ class Program
         bool _status = false;
 
         // instances
-        CharacterManager myManager = new CharacterManager("Null", _status);
+        CharacterManager myManager = new CharacterManager();
+        Character myChracter = new Character("Null", _status);
+        Kanji myKanji = new Kanji ("null", false, "kanji");
+
 
         // menthods
         myManager.DisplayMenu();
-        // myManager.DisplayKanji();
+        myManager.DisplayKanji();
 
 
     }

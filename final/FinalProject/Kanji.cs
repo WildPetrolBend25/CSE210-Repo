@@ -1,5 +1,5 @@
 using System;
-class Kanji : CharacterManager
+class Kanji : Character
 {
     // attributes
     string _kanji = "";
