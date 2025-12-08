@@ -7,12 +7,13 @@ class CharacterManager
 
     // instances
     Menu mymenu = new Menu();
-    Kanji myKanji = new Kanji("Sentence", false, "kanji"); 
+    private Character myCharacter;
+    //Kanji myKanji = new Kanji("Sentence", false, "kanji"); (((Take a little break 🦺)))
 
     // constructors
     public CharacterManager()
     {
-        
+        myCharacter = new Character("How was your day?", false);
     }
 
     // methods
@@ -25,9 +26,19 @@ class CharacterManager
         }
     }
 
-    public void DisplayKanji() 
+    public void DisplaySentence()
     {
-        Console.WriteLine(myKanji.DisplaySentence());
+        string[] ArraySentence = myCharacter.SentenceToArray();
+        foreach (string item in ArraySentence)
+        {
+            Console.WriteLine(item);
+        }
+        // Console.WriteLine(myCharacter.GetSentence());
     }
+
+    // public void DisplayKanji() (((Take a little break 🦺)))
+    // {
+    //     Console.WriteLine(myKanji.DisplaySentence());
+    // }
 
 }

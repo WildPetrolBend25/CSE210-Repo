@@ -16,7 +16,8 @@ class Program
 
         // menthods
         myManager.DisplayMenu();
-        myManager.DisplayKanji();
+        myManager.DisplaySentence();
+        //myManager.DisplayKanji(); (((Take a little break 🦺)))
 
 
     }

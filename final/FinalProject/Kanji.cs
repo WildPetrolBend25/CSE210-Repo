@@ -10,8 +10,8 @@ class Kanji : Character
     }
 
     // Methods 
-    public override string DisplaySentence()
+    public override string GetSentence()
     {
-        return $"My Kanji is: {base.DisplaySentence()} + {_kanji}";
+        return $"My Kanji is: {base.GetSentence()} + {_kanji}";
     }
 }
