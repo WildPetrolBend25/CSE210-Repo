@@ -8,12 +8,20 @@ class CharacterManager
     // instances
     Menu mymenu = new Menu(); //Step 3: Create a new instance of menu
     private Character myCharacter; //Step 7: setup the instance of myCharacter -> ChracterManager Constructor
+    private Kanji myKanji;
 
     // constructors
     public CharacterManager()
     {
-        myCharacter = new Character("How was your day?", false); /*Step 8: create new instance in constructor with 
+        //Enter a Japanese Sentence 
+        Console.Write("Please enter a Japanese Sentence to review: ");
+        string _japaneseSentence = Console.ReadLine();
+
+        myCharacter = new Character(_japaneseSentence, false); /*Step 8: create new instance in constructor with 
         require elements in Chracter class constructor -> Character class*/
+
+        myKanji = new Kanji("ありがとうございました", false);
+        myKanji.DisplayKanjiList(); //(((🦺)))
     }
 
     // methods
@@ -34,10 +42,49 @@ class CharacterManager
         Character class -> Character class */
         foreach (string item in ArraySentence)
         {
-            Console.Write($"{item} "); //Step 13: prints the sentence from myCharacter's instance
-        }
-        
+            if (item == "雨")
+            {
+                Console.WriteLine("Awesome, it regonized it");
+                Console.Write($"{item} "); //Step 13: prints the sentence from myCharacter's instance
+                Console.WriteLine(); //reset the cursor
+            }
+            else
+            {
+                Console.WriteLine(item);
+            }
+            
+        }  
     }
+    
+
+
+
+    // public void CheckForKanji() (((use later 🦺)))
+    // {
+    //     bool found = false;
+    //     foreach (int num1 in list1)
+    //     {
+    //         foreach (int num2 in list2)
+    //         {
+    //             if (num1 == num2)
+    //             {
+    //                 found = true;
+    //                 break; // exit inner loop early
+    //             }
+    //         }
+    //         if (found) break; // exit outer loop early
+    //     }
+
+    //     if (found)
+    //     {
+    //         Console.WriteLine("Congrats, it's in the list");
+    //     }
+    //     else
+    //     {
+    //         Console.WriteLine("No common numbers");
+    //     }
+
+    // }
 
    
 
