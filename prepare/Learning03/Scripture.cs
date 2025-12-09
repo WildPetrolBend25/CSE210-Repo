@@ -5,17 +5,17 @@ class Scripture
 {
     //private attributes
     private Reference _reference;
-    private List<Word> _words;
+    private List<Word> _words; //the list of word objects from step 7
 
     public Scripture(Reference reference, string text)
     {
         _reference = reference;
-        _words = new List<Word>();
+        _words = new List<Word>(); //Step 4: initialize _words as a new list
 
-        string[] wordArray = text.Split(" ");
-        foreach(string word in wordArray)
+        string[] wordArray = text.Split(" "); //Step 5: take the text passed in and turn into an array
+        foreach(string word in wordArray) //Step 6: for each item in the array, pass into _words
         {
-            Word newWord = new Word(word);
+            Word newWord = new Word(word); //Step 7: creates each item in the array into a new object of word, and passes in those objects -> GetDisplayText
             _words.Add(newWord);
         }
     }
@@ -23,10 +23,10 @@ class Scripture
     //word on you first 
     public void GetDisplayText()
     {
-        Console.Write(_reference.GetReference() + " ");
-        foreach (Word word in _words)
+        Console.Write(_reference.GetReference() + " "); //Step 2: Prints the reference from GetReference -> reference 
+        foreach (Word word in _words) //Step 4: Calls the word object that was created in the scripture constructor -> scripture constructor
         {
-            Console.Write(word.GetDisplayWord() + " ");
+            Console.Write(word.GetDisplayWord() + " ");  //Step 8: Call the GetDisplayWord method in word class for each word obejct -> word class
         }
         Console.WriteLine(); //new line 
     }

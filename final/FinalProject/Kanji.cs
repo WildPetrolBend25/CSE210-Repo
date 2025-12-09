@@ -6,7 +6,7 @@ class Kanji : Character
     private string[] KanjiArray; //set up list to contain kanji's
     
     // constructors
-    public Kanji(string sentence, bool status) : base(sentence, status)
+    public Kanji(string sentence) : base(sentence)
     {
         //Completion Status: (((✅)))
         // This finds your project folder automatically when running from bin/Debug/net8.0
@@ -27,7 +27,7 @@ class Kanji : Character
         return KanjiArray;
     }
 
-   public void DisplayKanjiList()
+    public void DisplayKanjiList()
     {
         foreach (char kanji in KanjiArray[0]) // since it's one long string on first line
         {
@@ -35,4 +35,6 @@ class Kanji : Character
         }
         Console.WriteLine();
     }
+
+    
 }

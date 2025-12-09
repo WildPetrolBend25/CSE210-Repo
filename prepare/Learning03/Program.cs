@@ -8,7 +8,7 @@ class Program
     {
         
         //set up our instances of data 
-        Reference ref1 = new Reference("John", 3, 16); 
+        Reference ref1 = new Reference("John", 3, 16); //instance for reference
         Scripture scripture1 = new Scripture(ref1, "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
 
         
@@ -16,9 +16,9 @@ class Program
         while (!done)
         {
             Console.Clear();
-            scripture1.GetDisplayText();
+            scripture1.GetDisplayText(); //Step 1: call GetDisplayText in Scripture class -> Scritpure
 
-            Console.WriteLine("\nPress Enter to hida a word, or type 'quit':");
+            Console.WriteLine("\nPress Enter to hide a word, or type 'quit':");
             string input = Console.ReadLine();
 
             if (input == "quit")

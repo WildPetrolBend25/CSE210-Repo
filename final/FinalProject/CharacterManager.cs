@@ -2,15 +2,15 @@ using System;
 using System.Reflection;
 class CharacterManager
 {
-    //attributes
+    //attributes <<<🟦>>>
    
 
-    // instances
+    // instances <<<🟦>>>
     Menu mymenu = new Menu(); //Step 3: Create a new instance of menu
     private Character myCharacter; //Step 7: setup the instance of myCharacter -> ChracterManager Constructor
-    private Kanji myKanji = new Kanji("null", false);
+    private Kanji myKanji = new Kanji("null");
 
-    // constructors
+    // constructors <<<🟦>>>
     public CharacterManager()
     {
         //Completion Status: (((✅)))
@@ -18,11 +18,11 @@ class CharacterManager
         Console.Write("Please enter a Japanese Sentence to review: ");
         string _japaneseSentence = Console.ReadLine();
 
-        myCharacter = new Character(_japaneseSentence, false); /*Step 8: create new instance in constructor with 
+        myCharacter = new Character(_japaneseSentence); /*Step 8: create new instance in constructor with 
         require elements in Chracter class constructor -> Character class*/
     }
 
-    // methods
+    // methods <<<🟦>>>
     public void DisplayMenu() /*Step 4: Access the DisplayMenu method with the new and call the new Menu instance
     GetMenu method + display each item in the string -> Menu class */ 
     //Completion Status (((✅)))
@@ -45,8 +45,9 @@ class CharacterManager
 
         foreach (string item in mylist)
         {
-           Console.WriteLine(item); 
+           Console.Write(item); 
         }
+        Console.WriteLine();
     }
 
     public List<string> CheckForKanji(string[] sentenceChars, string[] kanjiList) 
@@ -79,7 +80,6 @@ class CharacterManager
             }
         }
         return newlist;
-     
     }
 
 }

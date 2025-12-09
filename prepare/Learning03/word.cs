@@ -27,9 +27,9 @@ class Word
     }
 
 
-    public string GetDisplayWord()
+    public string GetDisplayWord() 
     {
-        if (_isHidden)
+        if (_isHidden) //checks to see if word obejct is hidden or not (first time round, no words are hidden)
         {
             string newString = "";
             foreach(char c in _word)

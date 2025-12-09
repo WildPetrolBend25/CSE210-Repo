@@ -27,7 +27,7 @@ class Reference
         _endVerse = endVerse;
     }
 
-    public string GetReference()
+    public string GetReference() //Step 3: based upon the length of the verse, return a different refference -> scrupture
     {
         // check is endverse is null type or not
         if (_endVerse == 0)
