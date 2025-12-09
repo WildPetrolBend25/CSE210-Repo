@@ -2,10 +2,10 @@ using System;
 using System.IO;
 class Kanji : Character
 {
-    // attributes
+    // attributes <<<🟦>>>
     private string[] KanjiArray; //set up list to contain kanji's
     
-    // constructors
+    // constructors <<<🟦>>>
     public Kanji(string sentence) : base(sentence)
     {
         //Completion Status: (((✅)))
@@ -16,12 +16,8 @@ class Kanji : Character
         KanjiArray = allKanjis.Select(c => c.ToString()).ToArray(); //splits the string of kanji's into just onle line characters
     }
 
-    // Methods 
-    public override string GetSentence()
-    {
-        return base.GetSentence();
-    }
-
+    
+    //Methods <<<🟦>>>
     public string[] GetKanjiArray()
     {
         return KanjiArray;
