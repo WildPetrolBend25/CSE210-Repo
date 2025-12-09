@@ -13,7 +13,7 @@ class CharacterManager
     // constructors
     public CharacterManager()
     {
-        //Completion Status: (((🦺)))
+        //Completion Status: (((✅)))
         //Enter a Japanese Sentence 
         Console.Write("Please enter a Japanese Sentence to review: ");
         string _japaneseSentence = Console.ReadLine();
@@ -41,21 +41,45 @@ class CharacterManager
         string[] ArraySentence = myCharacter.SentenceToArray(); /*Step 11: creates a new array and calls SentenceToArray method in 
         Character class -> Character class */
         string [] kanjiArray = myKanji.GetKanjiArray();
-        CheckForKanji(ArraySentence, kanjiArray);
+        List<string> mylist = CheckForKanji(ArraySentence, kanjiArray); //checks for which kanji's are in the sentence and then marks them with ____
+
+        foreach (string item in mylist)
+        {
+           Console.WriteLine(item); 
+        }
     }
 
-    public void CheckForKanji(string[] sentenceChars, string[] kanjiList) 
+    public List<string> CheckForKanji(string[] sentenceChars, string[] kanjiList) 
     //Completion Status: (((🦺)))
     {
+        //local variable
+        List<string> newlist = new List<string>();
+
         Console.WriteLine("\nKanji found in your sentence:");
 
-        foreach (string ch in sentenceChars)
+
+        foreach (string ch1 in sentenceChars)
         {
-            if (kanjiList.Contains(ch))
+            bool isKanji = false;
+            foreach (string ch2 in kanjiList)
             {
-                Console.WriteLine($"'{ch}' is a kanji!");
+                if (ch1 == ch2)
+                {
+                    isKanji = true;
+                    break;
+                }
+            }
+            if (isKanji)
+            {
+                newlist.Add("__");
+            }
+            else
+            {
+                newlist.Add(ch1);
             }
         }
+        return newlist;
+     
     }
 
 }

@@ -13,7 +13,7 @@ class Kanji : Character
         string projectDirectory = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
         string filename = Path.Combine(projectDirectory, "kanji_string.txt");
         string allKanjis = File.ReadAllText(filename).Trim(); //Reads whole file as one string
-        KanjiArray = allKanjis.Select(c => c.ToString()).ToArray(); //splits the string of kanji's into just onle ine characters
+        KanjiArray = allKanjis.Select(c => c.ToString()).ToArray(); //splits the string of kanji's into just onle line characters
     }
 
     // Methods 
