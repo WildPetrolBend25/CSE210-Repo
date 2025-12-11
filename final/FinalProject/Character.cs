@@ -42,4 +42,9 @@ class Character
     {
         _isHidden = hidden;
     }
+
+    public override string ToString()
+    {
+        return _sentence;
+    }
 }

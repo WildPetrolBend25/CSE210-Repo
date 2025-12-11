@@ -18,7 +18,7 @@ class CharacterManager
         //Completion Status: (((✅)))
         string[] _userInput = SetSentence();
         WordsToList(_userInput); // Step 3: converts string array to Word objects -> populates _words list
-        HideAllWords(); // Step 4: hides all words initially
+        HideAllWords(); // Step 4: hides all words initially -> Hide All words in Kanji Array
         _currentIndex = 0; // Step 5: initializes current index to 0 --> Program class 
     }
 
@@ -52,11 +52,25 @@ class CharacterManager
             }
         }
     
-    private void HideAllWords()
+    private void HideAllWords() 
         {
-            foreach (Character word in _words)
+            // foreach (Character word in _words)
+            // {
+            //     word.SetHidden(true);
+            // }
+
+            string [] kanjiArray = myKanji.GetKanjiArray(); //get an array of all the kanji characters
+
+            foreach (Character myChra in _words) //run through each character object
             {
-                word.SetHidden(true);
+                string stringChra = myChra.ToString(); //Place of interest (((🟨)))
+                foreach (string kanjiChar in kanjiArray)
+                {
+                    if (stringChra == kanjiChar)
+                    {
+                        myChra.SetHidden(true);
+                    }
+                }
             }
         }
 
@@ -89,55 +103,6 @@ class CharacterManager
             //step 15: checks if all words have been revealed / when _currentIndex exceeds word count
             //because it it increments after revealing each word --> Program class loop
         }
+    
 
-    //___________________________________________ OLD METHODS ____________________________________________
-
-// CURRERENTLY NOT IN USE BUT MAYBE USEFUL LATER (((🟨))) Work to pair with revealing only the Kanji chracters
-    public void DisplaySentence() /*Step 10: using the myCharacter instance, call the Display sentence method, which
-    is built to turn the sentence passed in, into a Array and then print the array -> DisplaySentence method*/
-    //Completion status: (((🦺)))
-    {
-        string[] ArraySentence = myCharacter.SentenceToArray(); /*Step 11: creates a new array and calls SentenceToArray method in 
-        Character class -> Character class */
-        string [] kanjiArray = myKanji.GetKanjiArray();
-        List<string> mylist = CheckForKanji(ArraySentence, kanjiArray); //checks for which kanji's are in the sentence and then marks them with ____
-
-        foreach (string item in mylist)
-        {
-           Console.Write(item); 
-        }
-        Console.WriteLine();
-    }
-
-    public List<string> CheckForKanji(string[] sentenceChars, string[] kanjiList) 
-    //Completion Status: (((🦺)))
-    {
-        //local variable
-        List<string> newlist = new List<string>();
-
-        Console.WriteLine("\nKanji found in your sentence:");
-
-
-        foreach (string ch1 in sentenceChars)
-        {
-            bool isKanji = false;
-            foreach (string ch2 in kanjiList)
-            {
-                if (ch1 == ch2)
-                {
-                    isKanji = true;
-                    break;
-                }
-            }
-            if (isKanji)
-            {
-                newlist.Add("__");
-            }
-            else
-            {
-                newlist.Add(ch1);
-            }
-        }
-        return newlist;
-    }
 }
