@@ -8,7 +8,6 @@ class Kanji : Character
     // constructors <<<🟦>>>
     public Kanji(string sentence) : base(sentence)
     {
-        //Completion Status: (((✅)))
         // This finds your project folder automatically when running from bin/Debug/net8.0
         string projectDirectory = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
         string filename = Path.Combine(projectDirectory, "kanji_string.txt");
