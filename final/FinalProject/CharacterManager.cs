@@ -90,18 +90,31 @@ class CharacterManager
 
     public void RevealNextWord() //step 11: reveals the next word in the list (((✅)))
         {
-            if (_currentIndex < _words.Count)
+            // if (_currentIndex < _words.Count)
+            // {
+            //     _words[_currentIndex].SetHidden(false); 
+            //     //step 12: Since all words have hidden set to true
+            //     //this sets the current word to revealed --> Word class SetHidden method
+            //     _currentIndex++; //Step 14: increments current index to point to next word --> Program class loop
+            // }
+
+            if (_currentIndex < _indexOFHiddenChars.Count()) 
+            //currentIndex runs through the list of indexes where the characters are hidden
+            //current index should be incremented by ++
             {
-                _words[_currentIndex].SetHidden(false); 
-                //step 12: Since all words have hidden set to true
-                //this sets the current word to revealed --> Word class SetHidden method
-                _currentIndex++; //Step 14: increments current index to point to next word --> Program class loop
+                int _hiddenCharIndex = _indexOFHiddenChars[_currentIndex];
+                _words[_hiddenCharIndex].SetHidden(false); //Reveals only the hidden character
+                _currentIndex++;
             }
+
         }
 
     public bool AllRevealed() //(((✅)))
         {
-            return _currentIndex >= _words.Count; 
+            //return _currentIndex >= _words.Count; 
+
+            return _currentIndex >= _indexOFHiddenChars.Count();
+            
             //step 15: checks if all words have been revealed / when _currentIndex exceeds word count
             //because it it increments after revealing each word --> Program class loop
         }
