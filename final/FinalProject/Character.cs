@@ -6,7 +6,7 @@ class Character
     private bool _isHidden;
     
     //constructors <<<🟦>>>
-     public Character(string sentence) /*Step []: Items passed in from ChracterManager's "myCharacter" 
+    public Character(string sentence) /*Step []: Items passed in from ChracterManager's "myCharacter" 
     instance are passed in -> ChracterManager class */
     {
         _sentence = sentence;

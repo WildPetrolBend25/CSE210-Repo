@@ -35,6 +35,9 @@ class Program
             {
                 Console.WriteLine("\nAll words revealed! Well done!");
                 Console.WriteLine("Press any key to exit...");
+
+                myManager.DisplayIndex(); //(((❌ display the index)))
+
                 Console.ReadKey();
                 done = true;
             }

@@ -23,14 +23,4 @@ class Kanji : Character
         return KanjiArray;
     }
 
-    public void DisplayKanjiList()
-    {
-        foreach (char kanji in KanjiArray[0]) // since it's one long string on first line
-        {
-            Console.Write(kanji);
-        }
-        Console.WriteLine();
-    }
-
-    
 }
