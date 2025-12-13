@@ -53,16 +53,6 @@ class Program
                 }
                 
             }
-            else if (userInput == 2)
-            {
-                Console.WriteLine("Nothing here yet #2");
-                done = true;
-            }
-            else if (userInput == 3)
-            {
-                Console.WriteLine("Nothing Here yet #3");
-                done = true;
-            }
             else
             {
                 done = true;
